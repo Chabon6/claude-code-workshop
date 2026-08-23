@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="robots" content="noindex,nofollow,noarchive">
   <title>Claude Code 工作實戰｜From Work to Skill</title>
   <meta name="description" content="90 分鐘 Claude Code 實戰課程：從日常工作到 Skill，再到測試與自動化。">
@@ -12,14 +12,21 @@
 <div class="ambient"></div>
 <div class="progress" id="progress"></div>
 <div class="shell">
-  <aside class="rail glass">
+  <aside class="rail glass" id="rail">
     <div class="brand">
       <div class="mark">CC</div>
       <h1>Claude Code 工作實戰</h1>
       <p>From Work to Skill</p>
     </div>
+
+    <div class="mobile-nav-head">
+      <div class="mobile-nav-copy"><small>COURSE</small><strong id="mobileCurrent">總覽</strong></div>
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="開啟課程目錄">
+        <span></span><span></span>
+      </button>
+    </div>
+
     <nav class="nav" id="nav">
-      <span class="mobile-title">Course</span>
       <a href="#overview">總覽</a>
       <a href="#basics">Skill Basics</a>
       <a href="#case-a">Case A</a>
@@ -49,7 +56,7 @@
         <div class="kicker">Course map</div>
         <h2 class="section-title">案例不是附錄，而是主線。</h2>
         <p class="section-lead">整堂課沿著一條成熟度曲線前進：先把重複規格固定，再把 judgment 放進去，最後把「按下開始」這件事交給系統。</p>
-        <div class="route">
+        <div class="route course-route">
           <div class="stage current"><small>01</small><strong>Skill basics</strong></div>
           <div class="stage"><small>02</small><strong>Skill + judgment</strong></div>
           <div class="stage"><small>03</small><strong>Hands-on + test</strong></div>
@@ -75,12 +82,10 @@
         <div class="kicker">01 · Skill basics</div>
         <h2 class="section-title">不要一直重新教 Claude 同一件事。</h2>
         <p class="section-lead">當你一再貼上相同 instructions、checklist、格式要求或 multi-step procedure，通常就是 Skill candidate。</p>
-
         <div class="compare">
           <div class="side before"><span class="tag">Repeated prompting</span><h3>每次重新解釋</h3><p>容易漏項、標準飄動，而且使用者必須記得每次要講什麼。</p></div>
           <div class="side after"><span class="tag">Reusable skill</span><h3>把方法存一次</h3><p>Claude 在相關任務出現時，載入固定工作方法、判斷規則與交付要求。</p></div>
         </div>
-
         <div class="panel glass">
           <div class="kicker">Anatomy</div>
           <h3>Skill 是資料夾，不只是長 Prompt。</h3>
@@ -94,19 +99,16 @@
             <div class="card"><div class="icon">B</div><h3>Instructions</h3><p>Skill 被使用時才載入主體工作方法；reference 資料按需要再讀。</p></div>
           </div>
         </div>
-
         <div class="callout blue"><strong>不要從空白檔案開始。</strong><p>Anthropic 官方的 skill-creator 可以幫你釐清需求、起草、測試與迭代。課堂真正要學的，是把工作知識說清楚。</p></div>
       </section>
 
       <section id="case-a">
         <div class="case-head"><div><div class="kicker">Case A · Simple</div><h2 class="section-title">Meeting Notes → Follow-up Brief</h2></div><span class="case-badge">LIVE DEMO</span></div>
         <p class="section-lead">這個案例刻意很簡單：不追求「聰明」，只把每次都要重講的格式與邊界固定下來。</p>
-
         <div class="compare">
           <div class="side before"><span class="tag">Before</span><p>每次提醒 Claude：整理決策、待辦、未解問題、下次追蹤；而且不要亂補 owner、deadline，也不要把討論中的 idea 寫成 confirmed decision。</p></div>
           <div class="side after"><span class="tag">After</span><p>Skill 固定輸出 Decisions / Action Items / Open Questions / Next Follow-up；沒有出現在筆記裡的 owner 或 due date 就寫「未指定」。</p></div>
         </div>
-
         <div class="panel flat">
           <div class="kicker">Demo input</div>
 <pre>產品更新會議
@@ -116,7 +118,6 @@
 - 行銷素材誰負責還沒定
 - 下次會議 8/30 下午 2 點</pre>
         </div>
-
         <div class="lesson"><div class="kicker">Lesson A</div><h3>Skill 不一定要很「聰明」才值得做。</h3><p>只要你每次都在重講同一套格式、檢查清單或邊界規則，就已經值得把它存起來。</p></div>
       </section>
 
@@ -124,14 +125,12 @@
         <div class="kicker">02 · Judgment</div>
         <h2 class="section-title">真正值錢的是 Claude 原本不知道的那一層。</h2>
         <p class="section-lead">好的 Skill 不只保存「做什麼」，還保存「你怎麼知道它做得夠不夠好」。</p>
-
         <div class="grid-2">
           <div class="card"><div class="icon">1</div><h3>Steps</h3><p>事情依什麼順序做？哪些步驟不能跳？</p></div>
           <div class="card"><div class="icon">2</div><h3>Judgment</h3><p>怎麼判斷重要／不重要、正常／異常、是否值得深入？</p></div>
           <div class="card"><div class="icon">3</div><h3>Exceptions</h3><p>什麼情況不能照一般規則？資料衝突時怎麼辦？</p></div>
           <div class="card"><div class="icon">4</div><h3>Definition of Done</h3><p>什麼品質才真的可以交出去？</p></div>
         </div>
-
         <div class="compare">
           <div class="side before"><span class="tag">Thin skill</span><pre>Review carefully.
 Identify important trends.
@@ -142,25 +141,21 @@ Separate facts from hypotheses.
 Escalate conflicting sources.
 Do not deliver until material numbers reconcile.</pre></div>
         </div>
-
         <div class="callout"><strong>四個訪談問題</strong><p>What do you repeatedly tell Claude? · What do you know that Claude doesn't? · What mistakes would a junior make? · What does “good enough to send” mean?</p></div>
       </section>
 
       <section id="case-b">
         <div class="case-head"><div><div class="kicker">Case B · Judgment-heavy</div><h2 class="section-title">報告品質作戰手冊</h2></div><span class="case-badge">REAL PROJECT</span></div>
         <p class="section-lead">在高度依賴 AI 產出報告的真實專案裡，最麻煩的不是程式報錯，而是<strong>品質會悄悄變差</strong>：流程可能被繞過、外部事實可能沒真的查證，但結果仍然看起來像一份正常報告。</p>
-
         <div class="panel glass">
           <h3>這個 Skill 不是「幫我 review 報告」。</h3>
           <p>它更像一份可重複調用的 quality playbook：保存這個專案到目前為止如何判斷品質、先修什麼、什麼不能為了分數犧牲，以及什麼時候應該停止繼續優化。</p>
         </div>
-
         <div class="grid-3">
           <div class="card"><div class="icon">1</div><h3>Sequence Judgment</h3><p><strong>先修地基，再談優化。</strong><br>如果前置品質流程沒有真的執行，後面的評分與比較都可能失真。</p></div>
           <div class="card"><div class="icon">2</div><h3>Trade-off Judgment</h3><p><strong>Accuracy &gt; Score。</strong><br>即使正確修正讓分數下降，也保留修正；好看的 KPI 不等於真正的品質。</p></div>
           <div class="card"><div class="icon">3</div><h3>Stop Judgment</h3><p><strong>知道什麼時候夠好。</strong><br>當核心問題已收斂、剩下主要是風格偏好時，不讓 review 無限循環。</p></div>
         </div>
-
         <div class="lesson"><div class="kicker">Lesson B</div><h3>Don't only teach what to do. Teach how you decide what's good enough.</h3><p>真正值錢的 Skill 往往保存的是那些「新人不一定知道，但有經驗的人腦中會自動跑一次」的判斷標準。</p></div>
       </section>
 
@@ -168,13 +163,11 @@ Do not deliver until material numbers reconcile.</pre></div>
         <div class="kicker">03 · Hands-on · 25 min</div>
         <h2 class="section-title">現在換你把一件真實工作變成 Skill。</h2>
         <p class="section-lead">不要選看起來很酷的題目。選你真的做過、之後還會再做，而且你知道好壞差異的工作。</p>
-
         <div class="grid-3">
           <div class="card"><div class="icon">1</div><h3>Pick</h3><p>選一個會重複出現、已有做法、結果有品質差異的工作。</p></div>
           <div class="card"><div class="icon">2</div><h3>Teach</h3><p>讓 Skill Creator 訪談你；提供真實例子、判斷、例外與 bad output。</p></div>
           <div class="card"><div class="icon">3</div><h3>Build</h3><p>讓 Skill Creator 起草；review 它是否真的捕捉到你的工作方法。</p></div>
         </div>
-
         <div class="panel flat">
           <div class="kicker">Starter prompt</div>
 <pre>Use the skill-creator skill to help me turn the following recurring work into a reusable Skill.
@@ -189,7 +182,6 @@ Do not draft immediately. First interview me about:
 
 My recurring task is: [describe your task]</pre>
         </div>
-
         <ul class="check">
           <li>我選的是自己真的做過的工作。</li>
           <li>我至少提供一個實際 input / output 或具體情境。</li>
@@ -203,12 +195,10 @@ My recurring task is: [describe your task]</pre>
         <div class="kicker">04 · Test & improve</div>
         <h2 class="section-title">第一版 Skill 不需要完美；它需要可被挑錯。</h2>
         <p class="section-lead">至少測一個 normal case，再測一個需要 judgment、資料缺漏或來源衝突的 difficult case。</p>
-
         <div class="grid-2">
           <div class="card"><div class="icon">N</div><h3>Normal case</h3><p>輸入完整、情境典型。確認 Skill 是否被正確使用，以及 workflow 是否順利。</p></div>
           <div class="card"><div class="icon">D</div><h3>Difficult case</h3><p>資料缺失、來源矛盾、例外、需要 judgment。這裡最容易暴露 Skill 真正的不足。</p></div>
         </div>
-
         <table>
           <thead><tr><th>症狀</th><th>通常要改哪一層</th></tr></thead>
           <tbody>
@@ -224,14 +214,12 @@ My recurring task is: [describe your task]</pre>
         <div class="kicker">05 · Automation</div>
         <h2 class="section-title">Skill 解決 HOW；Automation 解決 WHEN。</h2>
         <p class="section-lead">Skill 讓工作可重複。排程或 trigger，才讓工作在你沒有手動提醒 Claude 時發生。</p>
-
-        <div class="route">
+        <div class="route automation-route">
           <div class="stage"><small>WHEN</small><strong>Trigger</strong></div>
           <div class="stage"><small>WHO</small><strong>Claude Code</strong></div>
           <div class="stage"><small>HOW</small><strong>Skill</strong></div>
           <div class="stage"><small>RESULT</small><strong>Output</strong></div>
         </div>
-
         <table>
           <thead><tr><th>方式</th><th>適合什麼</th></tr></thead>
           <tbody>
@@ -245,13 +233,11 @@ My recurring task is: [describe your task]</pre>
       <section id="case-c">
         <div class="case-head"><div><div class="kicker">Case C · Automated</div><h2 class="section-title">每日盤前情報工作流</h2></div><span class="case-badge">REAL AUTOMATION</span></div>
         <p class="section-lead">這套真實系統曾經每天在盤前自動掃描台美股熱門標的、彙整多個來源、做題材強度判斷、品質檢查，最後把結果送出。</p>
-
         <div class="grid-3">
           <div class="card"><div class="icon">H</div><h3>High frequency</h3><p>每天都要做，重複成本會快速累積。</p></div>
           <div class="card"><div class="icon">T</div><h3>Time-sensitive</h3><p>必須在特定時間窗口完成，晚了價值就下降。</p></div>
           <div class="card"><div class="icon">S</div><h3>Stable workflow</h3><p>每天內容不同，但處理流程與品質要求相對固定。</p></div>
         </div>
-
         <div class="panel glass">
           <div class="kicker">A real failure story</div>
           <h3>「我在旁邊操作時可以」≠「沒有人在旁邊時也可以」</h3>
@@ -262,12 +248,10 @@ My recurring task is: [describe your task]</pre>
             <div class="timeline-item"><h4>修復 + 防復發</h4><p>換成明確、跨環境都可靠的呼叫方式，並加 regression test 避免未來改回去。</p></div>
           </div>
         </div>
-
         <div class="grid-2">
           <div class="card"><div class="icon">↓</div><h3>Graceful degradation</h3><p>某個資料源或判斷模組失敗時，可以走明確退階路徑，但必須誠實標示完整度。</p></div>
           <div class="card"><div class="icon">↻</div><h3>Built ≠ Maintained</h3><p>這套系統曾在 production 真實運行；目前排程暫停。Automation 仍然需要健康檢查與維護。</p></div>
         </div>
-
         <div class="lesson"><div class="kicker">Lesson C</div><h3>Automation changes who presses Start, not whether judgment matters.</h3><p>自動化不是把 judgment 拿掉，而是把「誰來觸發」拿掉；方法與判斷反而更需要被寫得清楚、可測、可降級。</p></div>
       </section>
 
@@ -300,16 +284,41 @@ My recurring task is: [describe your task]</pre>
 </div>
 <script>
 const bar=document.getElementById('progress');
+const rail=document.getElementById('rail');
+const toggle=document.getElementById('navToggle');
+const currentLabel=document.getElementById('mobileCurrent');
 const links=[...document.querySelectorAll('#nav a')];
 const sections=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+function closeMobileNav(){
+  rail.classList.remove('mobile-open');
+  toggle.setAttribute('aria-expanded','false');
+  toggle.setAttribute('aria-label','開啟課程目錄');
+}
+
+toggle.addEventListener('click',()=>{
+  const open=rail.classList.toggle('mobile-open');
+  toggle.setAttribute('aria-expanded',String(open));
+  toggle.setAttribute('aria-label',open?'關閉課程目錄':'開啟課程目錄');
+});
+
+links.forEach(a=>a.addEventListener('click',()=>{
+  if(window.matchMedia('(max-width: 980px)').matches) closeMobileNav();
+}));
+
 function update(){
   const d=document.documentElement,max=d.scrollHeight-d.clientHeight;
   bar.style.width=max?`${d.scrollTop/max*100}%`:'0%';
   let current=sections[0];
-  for(const s of sections){if(s.getBoundingClientRect().top<=150)current=s;}
+  for(const s of sections){if(s.getBoundingClientRect().top<=120)current=s;}
   links.forEach(a=>a.classList.toggle('active',current&&a.getAttribute('href')===`#${current.id}`));
+  const active=links.find(a=>a.classList.contains('active'));
+  if(active) currentLabel.textContent=active.textContent;
 }
-document.addEventListener('scroll',update,{passive:true});update();
+
+document.addEventListener('scroll',update,{passive:true});
+window.addEventListener('resize',()=>{if(window.innerWidth>980)closeMobileNav();},{passive:true});
+update();
 </script>
 </body>
 </html>
