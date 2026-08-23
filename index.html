@@ -27,7 +27,7 @@
       </button>
     </div>
 
-    <nav class="nav" id="nav">
+    <nav class="nav" id="nav" aria-label="課程目錄">
       <a href="#overview">總覽</a>
       <a href="#basics">Skill 基礎</a>
       <a href="#case-a">案例 A</a>
@@ -37,9 +37,10 @@
       <a href="#eval">測試</a>
       <a href="#automation">自動化</a>
       <a href="#case-c">案例 C</a>
+      <a href="#wrap-up">收尾</a>
       <a href="#sources">參考資料</a>
     </nav>
-    <div class="rail-note">90 分鐘正式教材 · 2026-08-23<br>請勿放入公司機密或敏感資料。</div>
+    <div class="rail-note">90 分鐘正式教材 · 2026-08-24<br>請勿放入公司機密或敏感資料。</div>
   </aside>
 
   <main class="main">
@@ -87,20 +88,27 @@
           <div class="side before"><span class="tag">每次重講</span><h3>規則容易漏，品質容易飄</h3><p>你必須記得每次要提醒 Claude 什麼。少講一條，結果就可能不同。</p></div>
           <div class="side after"><span class="tag">存成 Skill</span><h3>把工作方法固定下來</h3><p>Claude 遇到相關任務時，可以載入同一套步驟、判斷規則和交付標準。</p></div>
         </div>
+
         <div class="panel glass">
           <div class="kicker">Skill 結構</div>
-          <h3>Skill 是一個資料夾。核心是 <code>SKILL.md</code>。</h3>
+          <h3>Skill 是一個資料夾。入口是 <code>SKILL.md</code>。</h3>
 <pre>my-skill/
-├── SKILL.md          # 必要：描述 + 工作指示
+├── SKILL.md          # 必要：metadata + 工作指示
 ├── scripts/          # 選用：可執行程式
 ├── references/       # 選用：參考資料
 └── assets/           # 選用：模板或其他素材</pre>
           <div class="grid-2">
-            <div class="card"><div class="icon">A</div><h3>Description（用途描述）</h3><p>說清楚這個 Skill 做什麼、什麼時候該用。Claude 會靠這段描述判斷是否啟用它。</p></div>
-            <div class="card"><div class="icon">B</div><h3>Instructions（工作指示）</h3><p>Skill 啟用後，Claude 才讀取完整工作方法。其他參考資料則在需要時再讀。</p></div>
+            <div class="card"><div class="icon">A</div><h3>Metadata（名稱與用途描述）</h3><p><code>name</code> 和 <code>description</code> 放在 YAML frontmatter。用途描述要說清楚 Skill 做什麼、什麼時候該用；這是自動觸發的重要依據。</p></div>
+            <div class="card"><div class="icon">B</div><h3>SKILL.md 內文（工作指示）</h3><p>Skill 啟用後，Claude 才載入完整工作方法。其他參考資料則在需要時再讀。</p></div>
           </div>
         </div>
-        <div class="callout blue"><strong>不用從空白檔案開始。</strong><p>Anthropic 官方的 Skill Creator 可以協助你釐清需求、起草、測試和修改。你最重要的工作，是把自己的工作方法講清楚。</p></div>
+
+        <div class="grid-2">
+          <div class="card"><div class="icon">P</div><h3>專案 Skill</h3><p>放在 <code>.claude/skills/&lt;skill-name&gt;/SKILL.md</code>。適合跟著 repository 分享給團隊。</p></div>
+          <div class="card"><div class="icon">U</div><h3>個人 Skill</h3><p>放在 <code>~/.claude/skills/&lt;skill-name&gt;/SKILL.md</code>。可在自己的不同專案中使用。</p></div>
+        </div>
+
+        <div class="callout blue"><strong>不用從空白檔案開始。</strong><p>Anthropic 官方的 Skill Creator（Skill 建立助手）可以協助你釐清需求、起草、測試和修改。你最重要的工作，是把自己的工作方法講清楚。</p></div>
       </section>
 
       <section id="case-a">
@@ -216,8 +224,8 @@ My recurring task is: [describe your task]</pre>
 
       <section id="eval">
         <div class="kicker">04 · 測試與改進</div>
-        <h2 class="section-title">第一版不用完美，但一定要能被測出問題。</h2>
-        <p class="section-lead">至少準備兩個測試：一個正常情境，再加一個有缺漏、衝突或例外的困難情境。</p>
+        <h2 class="section-title">第一版不用完美，但一定要拿真實情境試。</h2>
+        <p class="section-lead">這堂課至少試兩種情境：一個正常案例，再加一個有缺漏、衝突或例外的困難案例。正式建立 Skill 時，Skill Creator 會依任務類型和你一起決定要不要建立完整的測試案例與評估。</p>
         <div class="grid-2">
           <div class="card"><div class="icon">N</div><h3>正常情境</h3><p>資料完整、情況典型。先確認 Skill 會被正確使用，而且基本流程能走完。</p></div>
           <div class="card"><div class="icon">D</div><h3>困難情境</h3><p>加入資料缺失、來源矛盾或例外。這最容易測出 Skill 缺少哪些判斷。</p></div>
@@ -244,13 +252,15 @@ My recurring task is: [describe your task]</pre>
           <div class="stage"><small>RESULT</small><strong>交付結果</strong></div>
         </div>
         <table>
-          <thead><tr><th>方式</th><th>適合情境</th></tr></thead>
+          <thead><tr><th>方式</th><th>適合情境與限制</th></tr></thead>
           <tbody>
-            <tr><td>Cloud Routines</td><td>工作要在 Anthropic 雲端定期執行，或由事件觸發</td></tr>
-            <tr><td>Desktop scheduled tasks</td><td>工作需要讀取本機檔案、工具或本地環境</td></tr>
-            <tr><td><code>/loop</code></td><td>只需要在目前工作階段短期重複檢查</td></tr>
+            <tr><td>Routines（研究預覽）</td><td>在 Anthropic 管理的雲端執行，可用排程、API 或 GitHub 事件觸發；電腦關機也能繼續。</td></tr>
+            <tr><td>Desktop scheduled tasks</td><td>需要讀本機檔案或工具時使用。Claude Desktop 必須開著，而且電腦要醒著；錯過的排程可能在之後補跑一次。</td></tr>
+            <tr><td><code>/loop</code></td><td>適合目前 Claude Code 工作階段中的短期輪詢。必須維持 session；重複任務建立 7 天後會到期。</td></tr>
+            <tr><td>GitHub Actions</td><td>適合把 Claude 放進 CI，以 GitHub 的 <code>schedule</code> 或其他工作流程事件執行。</td></tr>
           </tbody>
         </table>
+        <div class="callout"><strong>選排程方式前，先問：這個工作需要本機環境嗎？</strong><p>需要本機檔案或工具，就看 Desktop；需要電腦關機後仍可靠執行，就看 Routines 或 CI；只是在目前 session 短期追蹤，就用 <code>/loop</code>。</p></div>
       </section>
 
       <section id="case-c">
@@ -279,7 +289,7 @@ My recurring task is: [describe your task]</pre>
         <div class="lesson"><div class="kicker">Lesson C</div><h3>自動化拿掉的是「誰來按開始」，不是專業判斷。</h3><p>沒有人在旁邊時，工作方法反而更需要寫清楚、測清楚，還要先想好失敗時怎麼處理。</p></div>
       </section>
 
-      <section>
+      <section id="wrap-up">
         <div class="kicker">收尾</div>
         <h2 class="section-title">下一個 Skill，從你明天還會做的工作開始。</h2>
         <ul class="check">
@@ -292,17 +302,25 @@ My recurring task is: [describe your task]</pre>
       </section>
 
       <section id="sources">
-        <div class="kicker">官方參考資料</div>
+        <div class="kicker">參考資料</div>
         <h2 class="section-title">課後可從這裡繼續。</h2>
         <p class="section-lead">Claude Code 功能會持續更新。正式使用排程、自動化等功能前，請再確認最新官方文件。</p>
+
+        <h3>官方資料</h3>
         <ul class="sources">
           <li><a href="https://github.com/anthropics/skills" target="_blank" rel="noreferrer">Anthropic Skills repository</a></li>
           <li><a href="https://github.com/anthropics/skills/tree/main/skills/skill-creator" target="_blank" rel="noreferrer">Anthropic Skill Creator</a></li>
-          <li><a href="https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md" target="_blank" rel="noreferrer">Skill Creator — SKILL.md</a></li>
-          <li><a href="https://code.claude.com/docs" target="_blank" rel="noreferrer">Claude Code documentation</a></li>
-          <li><a href="https://github.com/danyuchn/iso-24495-skill" target="_blank" rel="noreferrer">ISO 24495 plain-language skill（本教材文字優化參考）</a></li>
+          <li><a href="https://code.claude.com/docs/en/skills" target="_blank" rel="noreferrer">Claude Code — Skills</a></li>
+          <li><a href="https://code.claude.com/docs/en/routines" target="_blank" rel="noreferrer">Claude Code — Routines</a></li>
+          <li><a href="https://code.claude.com/docs/en/desktop-scheduled-tasks" target="_blank" rel="noreferrer">Claude Code — Desktop scheduled tasks</a></li>
+          <li><a href="https://code.claude.com/docs/en/scheduled-tasks" target="_blank" rel="noreferrer">Claude Code — /loop and scheduled prompts</a></li>
         </ul>
-        <p class="foot">內容校對：2026-08-23。本教材為課程整理，不代表 Anthropic 或 ISO 官方課程內容。</p>
+
+        <h3>文字表達參考</h3>
+        <ul class="sources">
+          <li><a href="https://github.com/danyuchn/iso-24495-skill" target="_blank" rel="noreferrer">ISO 24495 plain-language skill（非 ISO 官方專案；本教材文字優化參考）</a></li>
+        </ul>
+        <p class="foot">內容校對：2026-08-24。本教材為課程整理，不代表 Anthropic 或 ISO 官方課程內容。</p>
       </section>
     </div>
   </main>
@@ -321,6 +339,16 @@ function closeMobileNav(){
   toggle.setAttribute('aria-label','開啟課程目錄');
 }
 
+function setActiveLink(activeLink){
+  links.forEach(a=>{
+    const isActive=a===activeLink;
+    a.classList.toggle('active',isActive);
+    if(isActive) a.setAttribute('aria-current','location');
+    else a.removeAttribute('aria-current');
+  });
+  if(activeLink) currentLabel.textContent=activeLink.textContent;
+}
+
 toggle.addEventListener('click',()=>{
   const open=rail.classList.toggle('mobile-open');
   toggle.setAttribute('aria-expanded',String(open));
@@ -331,14 +359,24 @@ links.forEach(a=>a.addEventListener('click',()=>{
   if(window.matchMedia('(max-width: 980px)').matches) closeMobileNav();
 }));
 
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'&&rail.classList.contains('mobile-open')){
+    closeMobileNav();
+    toggle.focus();
+  }
+});
+
+document.addEventListener('click',e=>{
+  if(window.matchMedia('(max-width: 980px)').matches&&rail.classList.contains('mobile-open')&&!rail.contains(e.target)) closeMobileNav();
+});
+
 function update(){
   const d=document.documentElement,max=d.scrollHeight-d.clientHeight;
   bar.style.width=max?`${d.scrollTop/max*100}%`:'0%';
   let current=sections[0];
   for(const s of sections){if(s.getBoundingClientRect().top<=120)current=s;}
-  links.forEach(a=>a.classList.toggle('active',current&&a.getAttribute('href')===`#${current.id}`));
-  const active=links.find(a=>a.classList.contains('active'));
-  if(active) currentLabel.textContent=active.textContent;
+  const active=links.find(a=>current&&a.getAttribute('href')===`#${current.id}`) || links[0];
+  setActiveLink(active);
 }
 
 document.addEventListener('scroll',update,{passive:true});
