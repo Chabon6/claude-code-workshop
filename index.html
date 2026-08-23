@@ -7,6 +7,7 @@
   <title>Claude Code 工作實戰｜把工作方法變成 Skill</title>
   <meta name="description" content="90 分鐘 Claude Code 實戰課程：找出值得重複使用的工作方法，做成 Skill，測試後再接上自動化。">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="mobile.css" media="(max-width: 980px)">
 </head>
 <body>
 <div class="ambient"></div>
@@ -109,15 +110,37 @@
           <div class="side before"><span class="tag">Before</span><p>每次都要提醒 Claude：整理決議、待辦、未解問題和下次追蹤時間；不要自己補負責人或期限，也不要把「有人提出的想法」寫成「已決定」。</p></div>
           <div class="side after"><span class="tag">After</span><p>Skill 固定輸出四個區塊：已確認決議、待辦事項、未解問題、下次追蹤。筆記沒寫負責人或期限，就直接標示「未指定」。</p></div>
         </div>
-        <div class="panel flat">
-          <div class="kicker">示範輸入</div>
+
+        <div class="grid-2 demo-io">
+          <div class="panel flat">
+            <div class="kicker">示範輸入</div>
 <pre>產品更新會議
 - 決定 9/1 先推出 beta
 - Amy 說可以研究邀請制，但還沒決定
 - Jason 要整理 onboarding FAQ，下週三前給初稿
 - 行銷素材誰負責還沒定
 - 下次會議 8/30 下午 2 點</pre>
+          </div>
+          <div class="panel flat">
+            <div class="kicker">示範輸出</div>
+<pre>已確認決議
+- 9/1 先推出 beta。
+
+待辦事項
+- 整理 onboarding FAQ 初稿
+  負責人：Jason
+  期限：下週三
+
+未解問題
+- 是否採用邀請制：尚未決定。
+- 行銷素材負責人：未指定。
+
+下次追蹤
+- 8/30 下午 2 點</pre>
+          </div>
         </div>
+
+        <div class="callout blue"><strong>注意差異：Skill 沒有替你猜答案。</strong><p>它做的是固定整理規則：只寫筆記裡有的資訊；沒有負責人、期限或決議，就明確說「未指定」或「尚未決定」。</p></div>
         <div class="lesson"><div class="kicker">Lesson A</div><h3>Skill 不需要很複雜，才值得做。</h3><p>只要你每次都在重講同一套格式、檢查清單或邊界規則，就可以先把它存起來。</p></div>
       </section>
 
