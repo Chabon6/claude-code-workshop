@@ -313,13 +313,107 @@ Do not deliver until material numbers reconcile to source.</pre>
       </section>
 
       <section id="cases">
-        <div class="kicker">Instructor Cases</div>
-        <h2>案例區先保留。</h2>
-        <p class="lead">之後放你的 2–3 個真實案例；建議刻意選不同成熟度，而不是三個不同主題的報告 Skill。</p>
+        <div class="kicker">Three Cases · One Progression</div>
+        <h2>從「固定格式」到「保存判斷」，再到「不需要你在場」。</h2>
+        <p class="lead">三個案例不是三種主題，而是同一條成熟度曲線：先把重複規格存起來，再把專業 judgment 放進去，最後把「按下開始」這件事也交出去。</p>
+
+        <div class="flow">
+          <div class="step">Repeated Prompt</div><div class="arrow">→</div>
+          <div class="step">Reusable Skill</div><div class="arrow">→</div>
+          <div class="step">Skill + Judgment</div><div class="arrow">→</div>
+          <div class="step">Skill + Trigger</div>
+        </div>
+
+        <h3>Case A · Simple — Meeting Notes → Follow-up Brief</h3>
+        <p>這個 Skill 不做複雜分析，只解決一個常見問題：每次會議後，都要重新提醒 Claude「幫我整理決策、待辦、未解問題、下次追蹤時間，而且不要亂猜 owner 或 deadline」。</p>
+        <div class="compare">
+          <div class="bad">
+            <span class="tag">Before</span>
+            <p>每次重新描述輸出格式；有時漏掉 action item，有時把討論中的想法誤寫成已決策事項，甚至自己補上沒有出現在筆記裡的責任人。</p>
+          </div>
+          <div class="good">
+            <span class="tag">After</span>
+            <p>Skill 固定四個區塊：Decisions、Action Items、Open Questions、Next Follow-up；所有內容必須可追溯到原始筆記，沒有 owner / due date 就明確標示「未指定」。</p>
+          </div>
+        </div>
+        <div class="callout">
+          <strong>Lesson A — Skill 不一定要很「聰明」才有價值。</strong>
+          <p>只要你每次都在重講同一套格式、檢查清單或邊界規則，就已經值得把它存成 Skill。這個案例適合現場 1–2 分鐘完整跑一次。</p>
+        </div>
+
+        <h3>Case B · Judgment-heavy — 報告品質作戰手冊</h3>
+        <p>在一個高度依賴 AI 產出報告的真實專案裡，最麻煩的不是程式報錯，而是<strong>品質會悄悄變差</strong>：流程可能被跳過、外部事實可能沒有真的查證，但結果看起來仍然像一份正常報告。</p>
+
+        <p>這個 Skill 因此不是「幫我 review 報告」的 prompt，而是一份可重複調用的 <strong>quality playbook</strong>：保存這個專案到目前為止怎麼判斷品質、先修什麼、什麼不能為了分數犧牲、以及什麼時候應該停止繼續優化。</p>
+
         <div class="grid-3">
-          <div class="placeholder"><h3>Case A · Simple</h3><p>Repeated prompt / checklist → reusable Skill。</p></div>
-          <div class="placeholder"><h3>Case B · Judgment-heavy</h3><p>Tacit knowledge / decision rules / exceptions。</p></div>
-          <div class="placeholder"><h3>Case C · Automated</h3><p>Skill + trigger / routine → autonomous workflow。</p></div>
+          <div class="card">
+            <div class="num">1</div>
+            <h3>Sequence Judgment</h3>
+            <p><strong>先修地基，再談優化。</strong><br>如果前置品質流程本身沒有真的執行，後面的評分與比較都可能失真。</p>
+          </div>
+          <div class="card">
+            <div class="num">2</div>
+            <h3>Trade-off Judgment</h3>
+            <p><strong>Accuracy &gt; Score。</strong><br>即使某個正確修正會讓評分下降，仍然保留修正；好看的 KPI 不等於真正的品質。</p>
+          </div>
+          <div class="card">
+            <div class="num">3</div>
+            <h3>Stop Judgment</h3>
+            <p><strong>知道什麼時候已經夠好。</strong><br>當核心問題已收斂、剩下主要是風格偏好時，不讓 review 無限循環。</p>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>Lesson B — Don't only teach Claude what to do. Teach how you decide what's good enough.</strong>
+          <p>真正值錢的 Skill 往往不是保存步驟，而是保存那些「新人不一定知道、但有經驗的人腦中會自動跑一次」的判斷標準。</p>
+        </div>
+
+        <h3>Case C · Automated — 每日盤前情報工作流</h3>
+        <p>這套真實系統曾經每天在盤前自動掃描台美股熱門標的、彙整多個來源、做題材強度判斷、品質檢查，最後把結果自動送出。它之所以值得自動化，不是因為內容每天一樣，而是因為它同時具備三個特徵：</p>
+
+        <div class="grid-3">
+          <div class="card"><div class="num">H</div><h3>High frequency</h3><p>每天都要做，重複成本會快速累積。</p></div>
+          <div class="card"><div class="num">T</div><h3>Time-sensitive</h3><p>必須在特定時間窗口完成，晚了價值就下降。</p></div>
+          <div class="card"><div class="num">S</div><h3>Stable workflow</h3><p>每天內容不同，但處理流程與品質要求相對固定。</p></div>
+        </div>
+
+        <div class="flow">
+          <div class="step">Scheduled Trigger</div><div class="arrow">→</div>
+          <div class="step">Claude Code</div><div class="arrow">→</div>
+          <div class="step">Skill</div><div class="arrow">→</div>
+          <div class="step">Data + Judgment</div><div class="arrow">→</div>
+          <div class="step">Quality Check</div><div class="arrow">→</div>
+          <div class="step">Delivery</div>
+        </div>
+
+        <div class="exercise">
+          <div class="label">A real failure story</div>
+          <h3>「我在旁邊操作時可以」≠「沒有人在旁邊時也可以」</h3>
+          <p>第一次嘗試無人值守執行時，系統很快就結束了，沒有錯誤訊息，也沒有產出——表面上像是「什麼都沒發生」。</p>
+          <p>問題不是靠猜找到的，而是把幾種呼叫方式在互動模式與 headless 模式下逐一實測。最後發現：某種在互動模式能正常工作的捷徑，在無人值守模式會被安靜地解析成空任務。</p>
+          <p>修復後，不只換成在兩種模式都可靠的明確呼叫方式，還加上一條 regression test，避免未來為了「簡化」又把問題改回來。</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Graceful degradation</h3>
+            <p>自動化不是 all-or-nothing。某個資料源或判斷模組失敗時，可以走明確的退階路徑，但必須誠實標示完整度，不假裝資料齊全。</p>
+          </div>
+          <div class="card">
+            <h3>Built ≠ Maintained</h3>
+            <p>這套系統曾在 production 真實自動運行；目前排程暫停。這不是「沒做成功」，而是提醒：automation 仍然是一個需要維護與確認健康狀態的系統。</p>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>Lesson C — Automation changes who presses Start, not whether judgment matters.</strong>
+          <p>自動化不是把判斷拿掉，而是把「誰來觸發」拿掉；Skill 裡保存的方法與 judgment，反而更需要被寫得清楚、可測、可降級。</p>
+        </div>
+
+        <div class="closing">
+          <h2>Three cases, one idea</h2>
+          <div class="quote">Skill 存的是你的方法；判斷力密度決定它值不值錢；自動化決定它需不需要你在場。</div>
         </div>
       </section>
 
