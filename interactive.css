@@ -63,3 +63,14 @@ details.explore-item{overflow:hidden;border-radius:18px;background:rgba(255,255,
 }
 
 @media(prefers-reduced-motion:reduce){#case-b details.explore-item{transition:none}}
+
+/* Case C timeline: line and marker centers share one mathematical axis. */
+#case-c .timeline{--timeline-axis:10px;--timeline-indent:28px;position:relative;padding-left:var(--timeline-indent)}
+#case-c .timeline:before{left:var(--timeline-axis);width:2px;transform:translateX(-50%)}
+#case-c .timeline-item{position:relative}
+#case-c .timeline-item:before{box-sizing:border-box;left:calc(var(--timeline-axis) - var(--timeline-indent));width:16px;height:16px;border-width:3px;transform:translateX(-50%)}
+@media(max-width:980px){
+  #case-c .timeline{--timeline-axis:6.5px;--timeline-indent:22px}
+  #case-c .timeline:before{left:var(--timeline-axis);width:2px;transform:translateX(-50%)}
+  #case-c .timeline-item:before{left:calc(var(--timeline-axis) - var(--timeline-indent));width:13px;height:13px;border-width:2px;transform:translateX(-50%)}
+}
