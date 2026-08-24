@@ -16,3 +16,50 @@ details.explore-item{overflow:hidden;border-radius:18px;background:rgba(255,255,
 @media(max-width:980px){.explore-shell{margin:20px 0;padding:17px;border-radius:20px}.explore-head{align-items:flex-start;flex-direction:column;gap:10px}.explore-head h3,.deck-head h3{font-size:21px}.explore-actions{width:100%}.explore-btn{flex:1;min-height:38px}.explore-grid,.explore-grid.three{grid-template-columns:1fr}.explore-item summary{padding:14px;grid-template-columns:32px minmax(0,1fr) 28px}.explore-index{width:32px;height:32px}.explore-body{padding:0 14px 15px 57px}.rule-steps{grid-template-columns:1fr}.deck-shell{margin:20px calc(var(--mobile-edge) * -1);border-radius:0;border-left:0;border-right:0}.deck-head{padding:0 var(--mobile-edge) 13px;align-items:flex-start}.deck-controls{gap:5px}.deck-btn{width:34px;height:34px}.skill-deck{padding:4px var(--mobile-edge) 14px;scroll-padding:var(--mobile-edge)}.deck-card{flex-basis:84vw;min-height:215px;padding:18px}.deck-hint{padding:0 var(--mobile-edge)}.file-explorer{margin-top:14px}}
 
 @media(prefers-reduced-motion:reduce){.explore-btn,.deck-btn,.explore-chevron{transition:none}}
+
+/* Case B visual refinement — open cards become full-width decision maps. */
+#case-b .explore-grid{gap:14px}
+#case-b details.explore-item{border-color:rgba(209,209,214,.72);background:rgba(255,255,255,.64);box-shadow:0 6px 20px rgba(0,0,0,.025),inset 0 1px 0 rgba(255,255,255,.96)}
+#case-b details.explore-item[open]{grid-column:1/-1;background:linear-gradient(180deg,rgba(255,255,255,.97),rgba(250,251,253,.94));border-color:rgba(199,199,204,.78);box-shadow:0 16px 36px rgba(0,0,0,.055),inset 0 1px 0 #fff}
+#case-b details.explore-item[open] summary{background:rgba(248,249,251,.82);border-bottom:1px solid rgba(229,229,234,.9)}
+#case-b details.explore-item summary{padding:17px 18px}
+#case-b .explore-summary strong{font-size:16px}
+#case-b .explore-summary small{font-size:11px;line-height:1.45}
+#case-b .explore-body{padding:22px 22px 22px}
+#case-b .rule-steps{counter-reset:decision-step;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin:0 0 16px}
+#case-b .rule-step{counter-increment:decision-step;position:relative;min-height:150px;padding:16px 15px 15px;border-radius:17px;background:linear-gradient(180deg,#fbfcfe,#f5f7fa);border:1px solid #e6e8ec;box-shadow:inset 0 1px 0 #fff}
+#case-b .rule-step:before{content:"0" counter(decision-step);position:absolute;right:13px;top:13px;color:#c7c7cc;font:700 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.04em}
+#case-b .rule-step:not(:last-child):after{content:"→";position:absolute;right:-18px;top:50%;z-index:2;transform:translate(50%,-50%);width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#fff;border:1px solid #e2e2e7;color:#8e8e93;font-size:14px;box-shadow:0 3px 10px rgba(0,0,0,.05)}
+#case-b .rule-step .rule-label{display:inline-flex;align-items:center;min-height:24px;margin:0 0 13px;padding:0 9px;border-radius:999px;background:#edf6ff;color:#0077e6;font-size:9px;line-height:1;text-transform:uppercase;letter-spacing:.08em;font-weight:850}
+#case-b .rule-step strong{font-size:14px;line-height:1.45;letter-spacing:-.01em;color:#1d1d1f;padding-right:18px}
+#case-b .rule-step p{margin:7px 0 0!important;font-size:12px!important;line-height:1.55!important;color:#6e6e73!important}
+#case-b .rule-step.stop{background:linear-gradient(180deg,#fffafa,#fff5f3);border-color:#f3d8d3}
+#case-b .rule-step.stop .rule-label{background:#fff0ed;color:#b83b30}
+#case-b .rule-step.go{background:linear-gradient(180deg,#fbfffc,#f1faf4);border-color:#d4eadb}
+#case-b .rule-step.go .rule-label{background:#eaf8ef;color:#21803d}
+#case-b .rule-example{display:flex;align-items:center;gap:14px;margin:0;padding:13px 15px;border-radius:15px;background:linear-gradient(135deg,#1d1d1f,#29292c);box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+#case-b .rule-example .rule-label{flex:0 0 auto;margin:0;padding:5px 8px;border-radius:999px;background:rgba(10,132,255,.18);color:#8cc8ff}
+#case-b .rule-example code{display:block;min-width:0;overflow-wrap:anywhere;font-size:11.5px;line-height:1.45;color:#f5f5f7}
+#case-b .rule-foot{margin:12px 2px 0!important;padding-left:12px;border-left:2px solid #d1d1d6;color:#7b7b80!important;font-size:11.5px!important;line-height:1.55!important}
+#case-b .rule-chip{vertical-align:middle;margin:2px 5px 2px 0}
+
+@media(max-width:1180px) and (min-width:981px){
+  #case-b .rule-steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  #case-b .rule-step:not(:last-child):after{display:none}
+  #case-b .rule-step{min-height:132px}
+}
+
+@media(max-width:980px){
+  #case-b details.explore-item[open]{grid-column:auto}
+  #case-b .explore-body{padding:17px 14px 16px}
+  #case-b .rule-steps{position:relative;display:grid;grid-template-columns:1fr;gap:11px;padding-left:14px}
+  #case-b .rule-steps:before{content:"";position:absolute;left:4px;top:18px;bottom:18px;width:1px;background:linear-gradient(#b9dcff,#d1d1d6)}
+  #case-b .rule-step{min-height:0;padding:14px 14px 14px 15px}
+  #case-b .rule-step:after{display:none!important}
+  #case-b .rule-step:before{right:12px;top:12px}
+  #case-b .rule-step .rule-label{margin-bottom:9px}
+  #case-b .rule-example{align-items:flex-start;flex-direction:column;gap:8px;padding:13px}
+  #case-b .rule-example code{font-size:10.5px}
+}
+
+@media(prefers-reduced-motion:reduce){#case-b details.explore-item{transition:none}}
