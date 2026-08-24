@@ -7,6 +7,7 @@
   <title>Claude Code 工作實戰｜把工作方法變成 Skill</title>
   <meta name="description" content="90 分鐘 Claude Code 實戰課程：找出值得重複使用的工作方法，做成 Skill，測試後再接上自動化。">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="interactive.css">
   <link rel="stylesheet" href="mobile.css" media="(max-width: 980px)">
 </head>
 <body>
@@ -14,124 +15,57 @@
 <div class="progress" id="progress"></div>
 <div class="shell">
   <aside class="rail glass" id="rail">
-    <div class="brand">
-      <div class="mark">CC</div>
-      <h1>Claude Code 工作實戰</h1>
-      <p>From Work to Skill</p>
-    </div>
-
+    <div class="brand"><div class="mark">CC</div><h1>Claude Code 工作實戰</h1><p>From Work to Skill</p></div>
     <div class="mobile-nav-head">
       <div class="mobile-nav-copy"><small>課程目錄</small><strong id="mobileCurrent">總覽</strong></div>
-      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="開啟課程目錄">
-        <span></span><span></span>
-      </button>
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="開啟課程目錄"><span></span><span></span></button>
     </div>
-
     <nav class="nav" id="nav" aria-label="課程目錄">
-      <a href="#overview">總覽</a>
-      <a href="#basics">Skill 基礎</a>
-      <a href="#case-a">案例 A</a>
-      <a href="#judgment">專業判斷</a>
-      <a href="#case-b">案例 B</a>
-      <a href="#hands">動手做</a>
-      <a href="#eval">測試</a>
-      <a href="#automation">自動化</a>
-      <a href="#case-c">案例 C</a>
-      <a href="#wrap-up">收尾</a>
-      <a href="#sources">參考資料</a>
+      <a href="#overview">總覽</a><a href="#basics">Skill 基礎</a><a href="#case-a">案例 A</a><a href="#judgment">專業判斷</a><a href="#case-b">案例 B</a><a href="#hands">動手做</a><a href="#eval">測試</a><a href="#automation">自動化</a><a href="#case-c">案例 C</a><a href="#wrap-up">收尾</a><a href="#sources">參考資料</a>
     </nav>
     <div class="rail-note">90 分鐘正式教材 · 2026-08-24<br>請勿放入公司機密或敏感資料。</div>
   </aside>
 
-  <main class="main">
-    <div class="content">
-      <header class="hero" id="overview">
-        <div class="eyebrow"><span class="dot"></span>90 分鐘 · 實作課</div>
-        <h2>From Work<br><span class="soft">to Skill.</span></h2>
-        <p class="lead">把你反覆教 Claude 的工作方法，做成可重複使用的 Skill。接著測試它，再決定哪些工作值得自動執行。</p>
-        <div class="hero-meta">
-          <span class="pill">建立</span><span class="pill">測試</span><span class="pill">改進</span><span class="pill">自動化</span>
-        </div>
-      </header>
+  <main class="main"><div class="content">
+    <header class="hero" id="overview">
+      <div class="eyebrow"><span class="dot"></span>90 分鐘 · 實作課</div>
+      <h2>From Work<br><span class="soft">to Skill.</span></h2>
+      <p class="lead">把你反覆教 Claude 的工作方法，做成可重複使用的 Skill。接著測試它，再決定哪些工作值得自動執行。</p>
+      <div class="hero-meta"><span class="pill">建立</span><span class="pill">測試</span><span class="pill">改進</span><span class="pill">自動化</span></div>
+    </header>
 
-      <section>
-        <div class="kicker">Course map</div>
-        <h2 class="section-title">案例就是這堂課的主線。</h2>
-        <p class="section-lead">我們會沿著同一條路線前進：先固定重複規則，再加入你的專業判斷，最後把「何時開始做」也交給系統。</p>
-        <div class="route course-route">
-          <div class="stage current"><small>01</small><strong>Skill 基礎</strong></div>
-          <div class="stage"><small>02</small><strong>加入專業判斷</strong></div>
-          <div class="stage"><small>03</small><strong>動手做 + 測試</strong></div>
-          <div class="stage"><small>04</small><strong>接上自動化</strong></div>
-        </div>
-        <table class="agenda">
-          <thead><tr><th>時間</th><th>內容</th><th>學完你會</th></tr></thead>
-          <tbody>
-            <tr><td>0–12</td><td>Skill 基礎</td><td>判斷哪些工作值得做成 Skill</td></tr>
-            <tr><td>12–20</td><td>案例 A · 簡單</td><td>看懂「只固定格式和規則」也有價值</td></tr>
-            <tr><td>20–30</td><td>專業判斷</td><td>找出自己工作中沒寫下來的判斷標準</td></tr>
-            <tr><td>30–40</td><td>案例 B · 判斷密集</td><td>看懂如何把經驗變成可重複使用的規則</td></tr>
-            <tr><td>40–65</td><td>動手做</td><td>用 Skill Creator 做出自己的 Skill</td></tr>
-            <tr><td>65–73</td><td>測試與改進</td><td>找出問題發生在哪一層，並修正它</td></tr>
-            <tr><td>73–80</td><td>自動化</td><td>分清楚「怎麼做」和「何時做」</td></tr>
-            <tr><td>80–88</td><td>案例 C · 自動化</td><td>理解無人值守執行的價值與風險</td></tr>
-            <tr><td>88–90</td><td>收尾</td><td>選出下一個值得做成 Skill 的工作</td></tr>
-          </tbody>
-        </table>
-      </section>
+    <section>
+      <div class="kicker">Course map</div><h2 class="section-title">案例就是這堂課的主線。</h2>
+      <p class="section-lead">我們會沿著同一條路線前進：先固定重複規則，再加入你的專業判斷，最後把「何時開始做」也交給系統。</p>
+      <div class="route course-route"><div class="stage current"><small>01</small><strong>Skill 基礎</strong></div><div class="stage"><small>02</small><strong>加入專業判斷</strong></div><div class="stage"><small>03</small><strong>動手做 + 測試</strong></div><div class="stage"><small>04</small><strong>接上自動化</strong></div></div>
+      <table class="agenda"><thead><tr><th>時間</th><th>內容</th><th>學完你會</th></tr></thead><tbody>
+        <tr><td>0–12</td><td>Skill 基礎</td><td>判斷哪些工作值得做成 Skill</td></tr><tr><td>12–20</td><td>案例 A · 簡單</td><td>看懂「只固定格式和規則」也有價值</td></tr><tr><td>20–30</td><td>專業判斷</td><td>找出自己工作中沒寫下來的判斷標準</td></tr><tr><td>30–40</td><td>案例 B · 判斷密集</td><td>看懂如何把經驗變成可重複使用的規則</td></tr><tr><td>40–65</td><td>動手做</td><td>用 Skill Creator 做出自己的 Skill</td></tr><tr><td>65–73</td><td>測試與改進</td><td>找出問題發生在哪一層，並修正它</td></tr><tr><td>73–80</td><td>自動化</td><td>分清楚「怎麼做」和「何時做」</td></tr><tr><td>80–88</td><td>案例 C · 自動化</td><td>理解無人值守執行的價值與風險</td></tr><tr><td>88–90</td><td>收尾</td><td>選出下一個值得做成 Skill 的工作</td></tr>
+      </tbody></table>
+    </section>
 
-      <section id="basics">
-        <div class="kicker">01 · Skill 基礎</div>
-        <h2 class="section-title">如果你一直重講同一件事，就把它存成 Skill。</h2>
-        <p class="section-lead">Skill 是一套可重複使用的工作方法。當你每次都貼上相同指示、檢查清單、格式要求或步驟，就值得考慮做成 Skill。</p>
-        <div class="compare">
-          <div class="side before"><span class="tag">每次重講</span><h3>規則容易漏，品質容易飄</h3><p>你必須記得每次要提醒 Claude 什麼。少講一條，結果就可能不同。</p></div>
-          <div class="side after"><span class="tag">存成 Skill</span><h3>把工作方法固定下來</h3><p>Claude 遇到相關任務時，可以載入同一套步驟、判斷規則和交付標準。</p></div>
-        </div>
-
-        <div class="panel glass">
-          <div class="kicker">Skill 結構</div>
-          <h3>Skill 是一個資料夾。入口是 <code>SKILL.md</code>。</h3>
-<pre>my-skill/
+    <section id="basics">
+      <div class="kicker">01 · Skill 基礎</div><h2 class="section-title">如果你一直重講同一件事，就把它存成 Skill。</h2>
+      <p class="section-lead">Skill 是一套可重複使用的工作方法。當你每次都貼上相同指示、檢查清單、格式要求或步驟，就值得考慮做成 Skill。</p>
+      <div class="compare"><div class="side before"><span class="tag">每次重講</span><h3>規則容易漏，品質容易飄</h3><p>你必須記得每次要提醒 Claude 什麼。少講一條，結果就可能不同。</p></div><div class="side after"><span class="tag">存成 Skill</span><h3>把工作方法固定下來</h3><p>Claude 遇到相關任務時，可以載入同一套步驟、判斷規則和交付標準。</p></div></div>
+      <div class="panel glass"><div class="kicker">Skill 結構</div><h3>Skill 是一個資料夾。入口是 <code>SKILL.md</code>。</h3><pre>my-skill/
 ├── SKILL.md          # 必要：metadata + 工作指示
 ├── scripts/          # 選用：可執行程式
 ├── references/       # 選用：參考資料
-└── assets/           # 選用：模板或其他素材</pre>
-          <div class="grid-2">
-            <div class="card"><div class="icon">A</div><h3>Metadata（名稱與用途描述）</h3><p><code>name</code> 和 <code>description</code> 放在 YAML frontmatter。用途描述要說清楚 Skill 做什麼、什麼時候該用；這是自動觸發的重要依據。</p></div>
-            <div class="card"><div class="icon">B</div><h3>SKILL.md 內文（工作指示）</h3><p>Skill 啟用後，Claude 才載入完整工作方法。其他參考資料則在需要時再讀。</p></div>
-          </div>
-        </div>
+└── assets/           # 選用：模板或其他素材</pre><div class="grid-2"><div class="card"><div class="icon">A</div><h3>Metadata（名稱與用途描述）</h3><p><code>name</code> 和 <code>description</code> 放在 YAML frontmatter。用途描述說清楚 Skill 做什麼、什麼時候該用。</p></div><div class="card"><div class="icon">B</div><h3>SKILL.md 內文（工作指示）</h3><p>Skill 啟用後，Claude 才載入完整工作方法。其他參考資料則在需要時再讀。</p></div></div></div>
+      <div class="grid-2"><div class="card"><div class="icon">P</div><h3>專案 Skill</h3><p><code>.claude/skills/&lt;skill-name&gt;/SKILL.md</code></p></div><div class="card"><div class="icon">U</div><h3>個人 Skill</h3><p><code>~/.claude/skills/&lt;skill-name&gt;/SKILL.md</code></p></div></div>
+      <div class="callout blue"><strong>不用從空白檔案開始。</strong><p>Anthropic 官方的 Skill Creator 可以協助你釐清需求、起草、測試和修改。你最重要的工作，是把自己的工作方法講清楚。</p></div>
+    </section>
 
-        <div class="grid-2">
-          <div class="card"><div class="icon">P</div><h3>專案 Skill</h3><p>放在 <code>.claude/skills/&lt;skill-name&gt;/SKILL.md</code>。適合跟著 repository 分享給團隊。</p></div>
-          <div class="card"><div class="icon">U</div><h3>個人 Skill</h3><p>放在 <code>~/.claude/skills/&lt;skill-name&gt;/SKILL.md</code>。可在自己的不同專案中使用。</p></div>
-        </div>
-
-        <div class="callout blue"><strong>不用從空白檔案開始。</strong><p>Anthropic 官方的 Skill Creator（Skill 建立助手）可以協助你釐清需求、起草、測試和修改。你最重要的工作，是把自己的工作方法講清楚。</p></div>
-      </section>
-
-      <section id="case-a">
-        <div class="case-head"><div><div class="kicker">案例 A · 簡單</div><h2 class="section-title">會議筆記 → 可直接寄出的會後摘要</h2></div><span class="case-badge">現場示範</span></div>
-        <p class="section-lead">這個案例不追求複雜分析。它只解決一件常見的事：每次會議後，都要用同一套格式整理，而且不能亂猜。</p>
-        <div class="compare">
-          <div class="side before"><span class="tag">Before</span><p>每次都要提醒 Claude：整理決議、待辦、未解問題和下次追蹤時間；不要自己補負責人或期限，也不要把「有人提出的想法」寫成「已決定」。</p></div>
-          <div class="side after"><span class="tag">After</span><p>Skill 固定輸出四個區塊：已確認決議、待辦事項、未解問題、下次追蹤。筆記沒寫負責人或期限，就直接標示「未指定」。</p></div>
-        </div>
-
-        <div class="grid-2 demo-io">
-          <div class="panel flat">
-            <div class="kicker">示範輸入</div>
-<pre>產品更新會議
+    <section id="case-a">
+      <div class="case-head"><div><div class="kicker">案例 A · 簡單</div><h2 class="section-title">會議筆記 → 可直接寄出的會後摘要</h2></div><span class="case-badge">現場示範</span></div>
+      <p class="section-lead">這個案例不追求複雜分析。它只解決一件常見的事：每次會議後，都要用同一套格式整理，而且不能亂猜。</p>
+      <div class="compare"><div class="side before"><span class="tag">Before</span><p>每次提醒 Claude：整理決議、待辦、未解問題和下次追蹤；不要自己補負責人或期限。</p></div><div class="side after"><span class="tag">After</span><p>Skill 固定輸出四個區塊；筆記沒寫負責人或期限，就標示「未指定」。</p></div></div>
+      <div class="grid-2 demo-io"><div class="panel flat"><div class="kicker">示範輸入</div><pre>產品更新會議
 - 決定 9/1 先推出 beta
 - Amy 說可以研究邀請制，但還沒決定
 - Jason 要整理 onboarding FAQ，下週三前給初稿
 - 行銷素材誰負責還沒定
-- 下次會議 8/30 下午 2 點</pre>
-          </div>
-          <div class="panel flat">
-            <div class="kicker">示範輸出</div>
-<pre>已確認決議
+- 下次會議 8/30 下午 2 點</pre></div><div class="panel flat"><div class="kicker">示範輸出</div><pre>已確認決議
 - 9/1 先推出 beta。
 
 待辦事項
@@ -144,64 +78,49 @@
 - 行銷素材負責人：未指定。
 
 下次追蹤
-- 8/30 下午 2 點</pre>
-          </div>
-        </div>
+- 8/30 下午 2 點</pre></div></div>
+      <div class="lesson"><div class="kicker">Lesson A</div><h3>Skill 不需要很複雜，才值得做。</h3><p>只要你每次都在重講同一套格式、檢查清單或邊界規則，就可以先把它存起來。</p></div>
+    </section>
 
-        <div class="callout blue"><strong>注意差異：Skill 沒有替你猜答案。</strong><p>它做的是固定整理規則：只寫筆記裡有的資訊；沒有負責人、期限或決議，就明確說「未指定」或「尚未決定」。</p></div>
-        <div class="lesson"><div class="kicker">Lesson A</div><h3>Skill 不需要很複雜，才值得做。</h3><p>只要你每次都在重講同一套格式、檢查清單或邊界規則，就可以先把它存起來。</p></div>
-      </section>
-
-      <section id="judgment">
-        <div class="kicker">02 · 專業判斷</div>
-        <h2 class="section-title">真正有價值的，是 Claude 原本不知道的判斷。</h2>
-        <p class="section-lead">好的 Skill 不只告訴 Claude「做什麼」，還要告訴它「怎麼判斷做到什麼程度才可以交付」。</p>
-        <div class="grid-2">
-          <div class="card"><div class="icon">1</div><h3>步驟</h3><p>事情照什麼順序做？哪些步驟不能跳？</p></div>
-          <div class="card"><div class="icon">2</div><h3>判斷</h3><p>什麼重要？什麼異常？什麼情況值得繼續追？</p></div>
-          <div class="card"><div class="icon">3</div><h3>例外</h3><p>什麼情況不能照一般規則？資料互相衝突時怎麼辦？</p></div>
-          <div class="card"><div class="icon">4</div><h3>完成標準</h3><p>做到什麼程度，才真的可以交給主管、客戶或下一個流程？</p></div>
-        </div>
-        <div class="compare">
-          <div class="side before"><span class="tag">太空泛</span><pre>仔細檢查資料。
+    <section id="judgment">
+      <div class="kicker">02 · 專業判斷</div><h2 class="section-title">真正有價值的，是 Claude 原本不知道的判斷。</h2>
+      <p class="section-lead">好的 Skill 不只告訴 Claude「做什麼」，還要告訴它「怎麼判斷做到什麼程度才可以交付」。</p>
+      <div class="grid-2"><div class="card"><div class="icon">1</div><h3>步驟</h3><p>事情照什麼順序做？哪些步驟不能跳？</p></div><div class="card"><div class="icon">2</div><h3>判斷</h3><p>什麼重要？什麼異常？什麼情況值得繼續追？</p></div><div class="card"><div class="icon">3</div><h3>例外</h3><p>什麼情況不能照一般規則？資料互相衝突時怎麼辦？</p></div><div class="card"><div class="icon">4</div><h3>完成標準</h3><p>做到什麼程度，才真的可以交出去？</p></div></div>
+      <div class="compare"><div class="side before"><span class="tag">太空泛</span><pre>仔細檢查資料。
 找出重要趨勢。
 保持專業與正確。
-交付前再次確認。</pre></div>
-          <div class="side after"><span class="tag">有判斷規則</span><pre>先看商業影響，不要只看變動百分比。
+交付前再次確認。</pre></div><div class="side after"><span class="tag">有判斷規則</span><pre>先看商業影響，不要只看變動百分比。
 把已確認事實和推測分開。
-來源互相衝突時，不要自行選一個；標示衝突並升級處理。
-重要數字沒有和來源核對前，不要交付。</pre></div>
-        </div>
-        <div class="callout"><strong>請用四個問題挖出你的經驗。</strong><p>你最常重複提醒 Claude 什麼？你知道、但 Claude 不知道什麼？新人最容易錯在哪裡？做到什麼程度你才願意直接送出？</p></div>
-      </section>
+來源衝突時，標示衝突並升級處理。
+重要數字沒有和來源核對前，不要交付。</pre></div></div>
+    </section>
 
-      <section id="case-b">
-        <div class="case-head"><div><div class="kicker">案例 B · 判斷密集</div><h2 class="section-title">把報告品質標準做成一份作戰手冊</h2></div><span class="case-badge">真實專案</span></div>
-        <p class="section-lead">AI 報告最危險的問題，不一定會報錯。有時流程被跳過、事實沒有查證，報告看起來仍然很正常，但品質已經下降。</p>
-        <div class="panel glass">
-          <h3>所以這個 Skill 不只是「幫我檢查報告」。</h3>
-          <p>它保存的是整套品質判斷：先修什麼、什麼不能為了分數犧牲，以及什麼時候已經夠好，可以停止修改。</p>
-        </div>
-        <div class="grid-3">
-          <div class="card"><div class="icon">1</div><h3>先修地基</h3><p>如果前面的品質檢查根本沒執行，後面的評分再漂亮也沒有意義。</p></div>
-          <div class="card"><div class="icon">2</div><h3>正確比高分重要</h3><p>如果修正事實會讓分數下降，仍然要修。好看的分數不等於真正的品質。</p></div>
-          <div class="card"><div class="icon">3</div><h3>知道何時停止</h3><p>核心問題已經解決，只剩風格偏好時，就不要讓檢查無限循環。</p></div>
-        </div>
-        <div class="lesson"><div class="kicker">Lesson B</div><h3>不要只教 Claude 做什麼，也要教它怎麼判斷「夠好了」。</h3><p>最值得保存的，常常是有經驗的人腦中會自動做、但新人不一定知道的判斷。</p></div>
-      </section>
+    <section id="case-b">
+      <div class="case-head"><div><div class="kicker">案例 B · 判斷密集</div><h2 class="section-title">把報告品質標準做成一份作戰手冊</h2></div><span class="case-badge">真實專案</span></div>
+      <p class="section-lead">AI 報告最危險的問題，不一定會報錯。有時流程被跳過、事實沒有查證，報告看起來仍然很正常，但品質已經下降。</p>
 
-      <section id="hands">
-        <div class="kicker">03 · 動手做 · 25 分鐘</div>
-        <h2 class="section-title">現在，把一件你真的做過的工作變成 Skill。</h2>
-        <p class="section-lead">不要挑「看起來很酷」的題目。挑一件之後還會再做，而且你分得出好結果和壞結果的工作。</p>
-        <div class="grid-3">
-          <div class="card"><div class="icon">1</div><h3>選</h3><p>選一件會重複出現，而且已有固定做法的工作。</p></div>
-          <div class="card"><div class="icon">2</div><h3>教</h3><p>讓 Skill Creator 訪談你。提供真實例子、判斷規則、例外和常見錯誤。</p></div>
-          <div class="card"><div class="icon">3</div><h3>建</h3><p>讓 Skill Creator 起草，再確認它有沒有真的抓到你的工作方法。</p></div>
+      <div class="explore-shell" data-explorer>
+        <div class="explore-head"><div><div class="kicker">Inside the real Skill</div><h3>點開看看：這份 Skill 真正存了什麼？</h3><p>先看抽象原則；有興趣再展開實際做法。</p></div><div class="explore-actions"><button class="explore-btn" type="button" data-open-all>全部展開</button><button class="explore-btn" type="button" data-close-all>全部收起</button></div></div>
+        <div class="explore-note">以下依真實 Skill 結構脫敏重建，不是原始文件逐字公開。</div>
+        <div class="explore-grid">
+          <details class="explore-item"><summary><span class="explore-index">01</span><span class="explore-summary"><strong>先修地基</strong><small>前置品質機制沒跑，後面的數字就不可信</small></span><span class="explore-chevron">＋</span></summary><div class="explore-body"><p>Skill 先列出幾個必須確認的前置閘門。只有地基正常，後面的評分與改善才有意義。</p><div class="real-rule"><b>真實判斷：</b>如果品質流程本身被繞過，就先修流程，不要直接拿結果做精細優化。</div></div></details>
+          <details class="explore-item"><summary><span class="explore-index">02</span><span class="explore-summary"><strong>保存品質機制盤點</strong><small>知道「已經建了什麼」，避免每次靠記憶重想</small></span><span class="explore-chevron">＋</span></summary><div class="explore-body"><p>這份 Skill 不只放指令，也保存目前已存在的品質槓桿與它們各自負責的問題。</p><span class="rule-chip blue">已建置</span><span class="rule-chip">需要重驗</span><span class="rule-chip amber">候選改善</span></div></details>
+          <details class="explore-item"><summary><span class="explore-index">03</span><span class="explore-summary"><strong>用真實基準判斷是否收斂</strong><small>不是「感覺有變好」，而是有歷史量測可以比較</small></span><span class="explore-chevron">＋</span></summary><div class="explore-body"><p>Skill 保存真實多輪審查的基準：前幾輪會抓出實質問題，後面逐步只剩方法論或風格意見。</p><div class="real-rule"><b>停止判準：</b>當核心品質問題不再出現、分數也不再實質改善，就不要為了風格偏好無限重跑。</div></div></details>
+          <details class="explore-item"><summary><span class="explore-index">04</span><span class="explore-summary"><strong>正確比高分重要</strong><small>Skill 也保存價值排序，不只保存 SOP</small></span><span class="explore-chevron">＋</span></summary><div class="explore-body"><p>某些正確修正可能讓評分變低。這份 Skill 明確記住：此時仍保留正確修正。</p><div class="real-rule"><b>價值取捨：</b>Accuracy &gt; Score。好看的 KPI 不等於真正的品質。</div></div></details>
+          <details class="explore-item"><summary><span class="explore-index">05</span><span class="explore-summary"><strong>候選不等於已驗證</strong><small>「聽起來有用」的點子先不要假裝已經有效</small></span><span class="explore-chevron">＋</span></summary><div class="explore-body"><p>Skill 會把尚未證明有效的改善標成 Candidate。只有實戰真的需要、而且驗證過，才升級成正式機制。</p><div class="real-rule"><b>專業紀律：</b>Skill 也可以保存「我們還不知道什麼」，而不是只保存答案。</div></div></details>
         </div>
-        <div class="panel flat">
-          <div class="kicker">起手 Prompt</div>
-<pre>Use the skill-creator skill to help me turn the following recurring work into a reusable Skill.
+        <div class="privacy-note">為保護真實研究內容，本教材不展示實際股票代碼、量測數值或投資結論。</div>
+      </div>
+
+      <div class="grid-3"><div class="card"><div class="icon">1</div><h3>順序判斷</h3><p>先修地基，再談優化。</p></div><div class="card"><div class="icon">2</div><h3>價值取捨</h3><p>正確比高分重要。</p></div><div class="card"><div class="icon">3</div><h3>停止判斷</h3><p>知道什麼時候已經夠好。</p></div></div>
+      <div class="lesson"><div class="kicker">Lesson B</div><h3>不要只教 Claude 做什麼，也要教它怎麼判斷「夠好了」。</h3><p>這個 Skill 保存的不只是規則，而是專案到目前為止的品質記憶、基準和下一步。</p></div>
+    </section>
+
+    <section id="hands">
+      <div class="kicker">03 · 動手做 · 25 分鐘</div><h2 class="section-title">現在，把一件你真的做過的工作變成 Skill。</h2>
+      <p class="section-lead">不要挑「看起來很酷」的題目。挑一件之後還會再做，而且你分得出好結果和壞結果的工作。</p>
+      <div class="grid-3"><div class="card"><div class="icon">1</div><h3>選</h3><p>選一件會重複出現，而且已有固定做法的工作。</p></div><div class="card"><div class="icon">2</div><h3>教</h3><p>讓 Skill Creator 訪談你。提供真實例子、判斷規則、例外和常見錯誤。</p></div><div class="card"><div class="icon">3</div><h3>建</h3><p>讓 Skill Creator 起草，再確認它有沒有真的抓到你的工作方法。</p></div></div>
+      <div class="panel flat"><div class="kicker">起手 Prompt</div><pre>Use the skill-creator skill to help me turn the following recurring work into a reusable Skill.
 
 Do not draft immediately. First interview me about:
 - when this task should trigger
@@ -211,119 +130,61 @@ Do not draft immediately. First interview me about:
 - what bad output looks like
 - what “good enough to send” means
 
-My recurring task is: [describe your task]</pre>
+My recurring task is: [describe your task]</pre></div>
+      <ul class="check"><li>選的是自己真的做過的工作。</li><li>至少提供一個真實輸入、輸出或具體情境。</li><li>至少說出一條「新人不一定知道」的判斷規則。</li><li>至少說明一個例外或常見錯誤。</li><li>說清楚什麼叫「可以直接交付」。</li></ul>
+    </section>
+
+    <section id="eval">
+      <div class="kicker">04 · 測試與改進</div><h2 class="section-title">第一版不用完美，但一定要拿真實情境試。</h2>
+      <p class="section-lead">這堂課至少試兩種情境：一個正常案例，再加一個有缺漏、衝突或例外的困難案例。</p>
+      <div class="grid-2"><div class="card"><div class="icon">N</div><h3>正常情境</h3><p>確認 Skill 會被正確使用，而且基本流程能走完。</p></div><div class="card"><div class="icon">D</div><h3>困難情境</h3><p>加入資料缺失、來源矛盾或例外，測出 Skill 缺少哪些判斷。</p></div></div>
+      <table><thead><tr><th>看到的問題</th><th>優先檢查</th></tr></thead><tbody><tr><td>該用卻沒用</td><td>用途描述和觸發條件</td></tr><tr><td>用了但做法不對</td><td>工作步驟、判斷規則和參考資料</td></tr><tr><td>看起來合理，但不能直接交</td><td>完成標準、品質檢查和範例</td></tr></tbody></table>
+    </section>
+
+    <section id="automation">
+      <div class="kicker">05 · 自動化</div><h2 class="section-title">Skill 決定怎麼做；自動化決定什麼時候做。</h2>
+      <p class="section-lead">先把工作方法做穩，再考慮排程或事件觸發。否則只是把不穩定的流程跑得更勤。</p>
+      <div class="route automation-route"><div class="stage"><small>WHEN</small><strong>觸發</strong></div><div class="stage"><small>WHO</small><strong>Claude Code</strong></div><div class="stage"><small>HOW</small><strong>Skill</strong></div><div class="stage"><small>RESULT</small><strong>交付結果</strong></div></div>
+      <table><thead><tr><th>方式</th><th>適合情境與限制</th></tr></thead><tbody><tr><td>Routines（研究預覽）</td><td>在 Anthropic 管理的雲端執行；電腦關機也能繼續。</td></tr><tr><td>Desktop scheduled tasks</td><td>需要本機檔案或工具；Desktop 必須開著，電腦要醒著。</td></tr><tr><td><code>/loop</code></td><td>目前工作階段中的短期輪詢；重複任務 7 天後到期。</td></tr><tr><td>GitHub Actions</td><td>適合放進 CI，用排程或其他 workflow event 執行。</td></tr></tbody></table>
+    </section>
+
+    <section id="case-c">
+      <div class="case-head"><div><div class="kicker">案例 C · 自動化</div><h2 class="section-title">每日盤前情報工作流</h2></div><span class="case-badge">真實自動化</span></div>
+      <p class="section-lead">這套系統曾在每天盤前自動整理台美股熱門標的。它值得自動化，因為同時具備：高頻率、有時效、流程穩定。</p>
+      <div class="grid-3"><div class="card"><div class="icon">H</div><h3>高頻率</h3><p>每天都要做。</p></div><div class="card"><div class="icon">T</div><h3>有時效</h3><p>晚了，價值就下降。</p></div><div class="card"><div class="icon">S</div><h3>流程穩定</h3><p>內容每天不同，但處理方法固定。</p></div></div>
+
+      <div class="deck-shell" data-deck>
+        <div class="deck-head"><div><div class="kicker">Inside the automated Skill</div><h3>左右滑：看完整 8 步驟執行協定</h3><p>手機直接滑動；桌機可用左右按鈕。</p></div><div class="deck-controls"><button class="deck-btn" type="button" data-prev aria-label="上一步">‹</button><span class="deck-count"><b data-current>1</b> / 8</span><button class="deck-btn" type="button" data-next aria-label="下一步">›</button></div></div>
+        <div class="skill-deck" data-track tabindex="0" aria-label="8 步驟自動化流程">
+          <article class="deck-card"><div class="deck-step"><span>01</span><span>SCREEN</span></div><h4>量化篩選</h4><p>先用固定條件縮小候選範圍，避免所有資訊一股腦交給後面的判斷。</p><div class="micro">目的：先降低噪音，再做深度分析。</div></article>
+          <article class="deck-card"><div class="deck-step"><span>02</span><span>FEEDBACK</span></div><h4>回填結果與週期回顧</h4><p>把過去結果留下來，讓系統知道哪些訊號曾經有效，而不是每天失憶重來。</p><div class="micro">Skill 可以保存「目前做到哪裡」，不只保存 SOP。</div></article>
+          <article class="deck-card"><div class="deck-step"><span>03</span><span>SOURCES</span></div><h4>多來源獨立抓取</h4><p>七個情報來源彼此獨立。一個來源掛掉，不讓其他來源一起失敗。</p><div class="micro">設計原則：故障隔離，而不是全有全無。</div></article>
+          <article class="deck-card"><div class="deck-step"><span>04</span><span>VALIDATE</span></div><h4>萃取與驗證訊號</h4><p>不是抓到就收。證據不足的資訊直接拒收，不為了「看起來完整」強行塞進結果。</p><div class="micro">品質規則：不完整可以，假完整不行。</div></article>
+          <article class="deck-card"><div class="deck-step"><span>05</span><span>JUDGE</span></div><h4>AI 子代理做強度裁決</h4><p>專職推理代理把題材分成「剛升溫／高潮／退燒」。裁決失敗時有明確退階方案。</p><div class="micro">自動化沒有拿掉 judgment；它把 judgment 結構化了。</div></article>
+          <article class="deck-card"><div class="deck-step"><span>06</span><span>COMPOSE</span></div><h4>組成訊息</h4><p>依固定格式把來源、訊號與判斷整理成一則可以直接閱讀的盤前訊息。</p><div class="micro">格式契約讓下游不用重新猜內容在哪。</div></article>
+          <article class="deck-card"><div class="deck-step"><span>07</span><span>QUALITY</span></div><h4>發送前品質檢查</h4><p>確認輸出符合必要條件，缺資料時要明確標示，而不是假裝完整。</p><div class="micro">Automation 前仍然需要 Definition of Done。</div></article>
+          <article class="deck-card"><div class="deck-step"><span>08</span><span>DELIVER</span></div><h4>發送 + 成功標記</h4><p>只有真正發送成功才寫成功狀態；發送失敗不能留下假的成功紀錄。</p><div class="micro">系統狀態本身也是品質的一部分。</div></article>
         </div>
-        <ul class="check">
-          <li>選的是自己真的做過的工作。</li>
-          <li>至少提供一個真實輸入、輸出或具體情境。</li>
-          <li>至少說出一條「新人不一定知道」的判斷規則。</li>
-          <li>至少說明一個例外或常見錯誤。</li>
-          <li>說清楚什麼叫「可以直接交付」。</li>
-        </ul>
-      </section>
+        <div class="deck-hint"><strong>提示：</strong>這是依真實 8 步驟協定脫敏重建；股票、訊息目的地與憑證均未公開。</div>
+      </div>
 
-      <section id="eval">
-        <div class="kicker">04 · 測試與改進</div>
-        <h2 class="section-title">第一版不用完美，但一定要拿真實情境試。</h2>
-        <p class="section-lead">這堂課至少試兩種情境：一個正常案例，再加一個有缺漏、衝突或例外的困難案例。正式建立 Skill 時，Skill Creator 會依任務類型和你一起決定要不要建立完整的測試案例與評估。</p>
-        <div class="grid-2">
-          <div class="card"><div class="icon">N</div><h3>正常情境</h3><p>資料完整、情況典型。先確認 Skill 會被正確使用，而且基本流程能走完。</p></div>
-          <div class="card"><div class="icon">D</div><h3>困難情境</h3><p>加入資料缺失、來源矛盾或例外。這最容易測出 Skill 缺少哪些判斷。</p></div>
+      <div class="explore-shell" data-explorer>
+        <div class="explore-head"><div><div class="kicker">Supporting memory</div><h3>真正的系統不只有一份 Skill</h3><p>點開三塊支援記憶，看看它怎麼避免「做完就忘」。</p></div><div class="explore-actions"><button class="explore-btn" type="button" data-open-all>全部展開</button><button class="explore-btn" type="button" data-close-all>全部收起</button></div></div>
+        <div class="explore-grid three file-explorer">
+          <details class="explore-item"><summary><span class="file-icon">WHY</span><span class="explore-summary"><strong>設計意圖</strong><small>為什麼系統要這樣做</small></span><span class="explore-chevron">＋</span></summary><div class="explore-body"><p>保存原始設計理由。未來修改時，不只知道「現在長這樣」，還知道當初為什麼這樣設計。</p></div></details>
+          <details class="explore-item"><summary><span class="file-icon">BUG</span><span class="explore-summary"><strong>故障與修復記憶</strong><small>以前踩過哪些坑</small></span><span class="explore-chevron">＋</span></summary><div class="explore-body"><p>包含曾經發生過的 silent failure、怎麼定位、怎麼修，以及哪個 regression test 用來防止復發。</p></div></details>
+          <details class="explore-item"><summary><span class="file-icon">OPS</span><span class="explore-summary"><strong>日常運維</strong><small>平常怎麼確認它還活著</small></span><span class="explore-chevron">＋</span></summary><div class="explore-body"><p>保存日常維護方式。Automation 建好不代表永遠正常；健康檢查也是系統的一部分。</p></div></details>
         </div>
-        <table>
-          <thead><tr><th>看到的問題</th><th>優先檢查</th></tr></thead>
-          <tbody>
-            <tr><td>該用卻沒用</td><td>用途描述和觸發條件</td></tr>
-            <tr><td>用了但做法不對</td><td>工作步驟、判斷規則和參考資料</td></tr>
-            <tr><td>看起來合理，但不能直接交</td><td>完成標準、品質檢查和範例</td></tr>
-          </tbody>
-        </table>
-        <div class="callout blue"><strong>最後只問一件事：我真的敢把這個結果送出去嗎？</strong><p>如果不敢，不要只說「再好一點」。把不能交付的具體原因告訴 Skill Creator，讓它修改正確的地方。</p></div>
-      </section>
+      </div>
 
-      <section id="automation">
-        <div class="kicker">05 · 自動化</div>
-        <h2 class="section-title">Skill 決定怎麼做；自動化決定什麼時候做。</h2>
-        <p class="section-lead">先把工作方法做穩，再考慮排程或事件觸發。否則只是把不穩定的流程跑得更勤。</p>
-        <div class="route automation-route">
-          <div class="stage"><small>WHEN</small><strong>觸發</strong></div>
-          <div class="stage"><small>WHO</small><strong>Claude Code</strong></div>
-          <div class="stage"><small>HOW</small><strong>Skill</strong></div>
-          <div class="stage"><small>RESULT</small><strong>交付結果</strong></div>
-        </div>
-        <table>
-          <thead><tr><th>方式</th><th>適合情境與限制</th></tr></thead>
-          <tbody>
-            <tr><td>Routines（研究預覽）</td><td>在 Anthropic 管理的雲端執行，可用排程、API 或 GitHub 事件觸發；電腦關機也能繼續。</td></tr>
-            <tr><td>Desktop scheduled tasks</td><td>需要讀本機檔案或工具時使用。Claude Desktop 必須開著，而且電腦要醒著；錯過的排程可能在之後補跑一次。</td></tr>
-            <tr><td><code>/loop</code></td><td>適合目前 Claude Code 工作階段中的短期輪詢。必須維持 session；重複任務建立 7 天後會到期。</td></tr>
-            <tr><td>GitHub Actions</td><td>適合把 Claude 放進 CI，以 GitHub 的 <code>schedule</code> 或其他工作流程事件執行。</td></tr>
-          </tbody>
-        </table>
-        <div class="callout"><strong>選排程方式前，先問：這個工作需要本機環境嗎？</strong><p>需要本機檔案或工具，就看 Desktop；需要電腦關機後仍可靠執行，就看 Routines 或 CI；只是在目前 session 短期追蹤，就用 <code>/loop</code>。</p></div>
-      </section>
+      <div class="panel glass"><div class="kicker">一次真實失敗</div><h3>「我在旁邊操作時能跑」不代表「沒人在旁邊時也能跑」。</h3><div class="timeline"><div class="timeline-item"><h4>第一次無人值守執行</h4><p>程式很快結束。沒有錯誤，也沒有產出。</p></div><div class="timeline-item"><h4>不要猜，直接測</h4><p>把不同啟動方式在互動模式與無人值守模式逐一實測。</p></div><div class="timeline-item"><h4>找到原因</h4><p>某個互動模式可用的捷徑，在無人值守模式被安靜地解析成空任務。</p></div><div class="timeline-item"><h4>修好，也防止復發</h4><p>改用跨環境都可靠的明確呼叫方式，再加 regression test。</p></div></div></div>
+      <div class="lesson"><div class="kicker">Lesson C</div><h3>自動化拿掉的是「誰來按開始」，不是專業判斷。</h3><p>沒有人在旁邊時，工作方法反而更需要寫清楚、測清楚，還要先想好失敗時怎麼處理。</p></div>
+    </section>
 
-      <section id="case-c">
-        <div class="case-head"><div><div class="kicker">案例 C · 自動化</div><h2 class="section-title">每日盤前情報工作流</h2></div><span class="case-badge">真實自動化</span></div>
-        <p class="section-lead">這套系統曾在每天盤前自動整理台美股熱門標的：抓資料、判斷題材強度、做品質檢查，再送出結果。</p>
-        <p class="section-lead">它值得自動化，因為同時符合三個條件：</p>
-        <div class="grid-3">
-          <div class="card"><div class="icon">H</div><h3>高頻率</h3><p>每天都要做，重複成本會快速累積。</p></div>
-          <div class="card"><div class="icon">T</div><h3>有時效</h3><p>必須在特定時間完成。晚了，結果的價值就下降。</p></div>
-          <div class="card"><div class="icon">S</div><h3>流程穩定</h3><p>每天資料不同，但處理步驟和品質標準大致固定。</p></div>
-        </div>
-        <div class="panel glass">
-          <div class="kicker">一次真實失敗</div>
-          <h3>「我在旁邊操作時能跑」不代表「沒人在旁邊時也能跑」。</h3>
-          <div class="timeline">
-            <div class="timeline-item"><h4>第一次無人值守執行</h4><p>程式很快就結束。沒有錯誤，也沒有產出，看起來像什麼都沒發生。</p></div>
-            <div class="timeline-item"><h4>不要猜，直接測</h4><p>把不同啟動方式逐一放進互動模式和無人值守模式測試。</p></div>
-            <div class="timeline-item"><h4>找到原因</h4><p>其中一種在互動模式可用的捷徑，到了無人值守模式卻被當成空任務。</p></div>
-            <div class="timeline-item"><h4>修好，也防止它再發生</h4><p>改用兩種模式都可靠的明確啟動方式，再加回歸測試，避免未來又改回有問題的寫法。</p></div>
-          </div>
-        </div>
-        <div class="grid-2">
-          <div class="card"><div class="icon">↓</div><h3>失敗時要能降級</h3><p>某個資料來源失效，不一定要讓整份結果消失。可以繼續產出，但要清楚標示哪些資料不完整。</p></div>
-          <div class="card"><div class="icon">↻</div><h3>建好不等於不用維護</h3><p>這套系統曾經正式自動運行，目前排程已暫停。任何自動化都還是需要健康檢查和維護。</p></div>
-        </div>
-        <div class="lesson"><div class="kicker">Lesson C</div><h3>自動化拿掉的是「誰來按開始」，不是專業判斷。</h3><p>沒有人在旁邊時，工作方法反而更需要寫清楚、測清楚，還要先想好失敗時怎麼處理。</p></div>
-      </section>
+    <section id="wrap-up"><div class="kicker">收尾</div><h2 class="section-title">下一個 Skill，從你明天還會做的工作開始。</h2><ul class="check"><li>這件事之後還會再發生嗎？</li><li>我是不是每次都在重複提醒 Claude 同樣的事？</li><li>這件事有沒有「我知道，但新人未必知道」的判斷？</li><li>我能不能說清楚什麼結果才算可以交付？</li></ul><div class="footer-quote"><strong>Skill 保存你的工作方法。<br>專業判斷決定它有多值錢。<br>自動化決定你需不需要在場。</strong><p>建立 → 測試 → 改進 → 自動化</p></div></section>
 
-      <section id="wrap-up">
-        <div class="kicker">收尾</div>
-        <h2 class="section-title">下一個 Skill，從你明天還會做的工作開始。</h2>
-        <ul class="check">
-          <li>這件事之後還會再發生嗎？</li>
-          <li>我是不是每次都在重複提醒 Claude 同樣的事？</li>
-          <li>這件事有沒有「我知道，但新人未必知道」的判斷？</li>
-          <li>我能不能說清楚什麼結果才算可以交付？</li>
-        </ul>
-        <div class="footer-quote"><strong>Skill 保存你的工作方法。<br>專業判斷決定它有多值錢。<br>自動化決定你需不需要在場。</strong><p>建立 → 測試 → 改進 → 自動化</p></div>
-      </section>
-
-      <section id="sources">
-        <div class="kicker">參考資料</div>
-        <h2 class="section-title">課後可從這裡繼續。</h2>
-        <p class="section-lead">Claude Code 功能會持續更新。正式使用排程、自動化等功能前，請再確認最新官方文件。</p>
-
-        <h3>官方資料</h3>
-        <ul class="sources">
-          <li><a href="https://github.com/anthropics/skills" target="_blank" rel="noreferrer">Anthropic Skills repository</a></li>
-          <li><a href="https://github.com/anthropics/skills/tree/main/skills/skill-creator" target="_blank" rel="noreferrer">Anthropic Skill Creator</a></li>
-          <li><a href="https://code.claude.com/docs/en/skills" target="_blank" rel="noreferrer">Claude Code — Skills</a></li>
-          <li><a href="https://code.claude.com/docs/en/routines" target="_blank" rel="noreferrer">Claude Code — Routines</a></li>
-          <li><a href="https://code.claude.com/docs/en/desktop-scheduled-tasks" target="_blank" rel="noreferrer">Claude Code — Desktop scheduled tasks</a></li>
-          <li><a href="https://code.claude.com/docs/en/scheduled-tasks" target="_blank" rel="noreferrer">Claude Code — /loop and scheduled prompts</a></li>
-        </ul>
-
-        <h3>文字表達參考</h3>
-        <ul class="sources">
-          <li><a href="https://github.com/danyuchn/iso-24495-skill" target="_blank" rel="noreferrer">ISO 24495 plain-language skill（非 ISO 官方專案；本教材文字優化參考）</a></li>
-        </ul>
-        <p class="foot">內容校對：2026-08-24。本教材為課程整理，不代表 Anthropic 或 ISO 官方課程內容。</p>
-      </section>
-    </div>
-  </main>
+    <section id="sources"><div class="kicker">參考資料</div><h2 class="section-title">課後可從這裡繼續。</h2><p class="section-lead">Claude Code 功能會持續更新。正式使用排程、自動化等功能前，請再確認最新官方文件。</p><h3>官方資料</h3><ul class="sources"><li><a href="https://github.com/anthropics/skills" target="_blank" rel="noreferrer">Anthropic Skills repository</a></li><li><a href="https://github.com/anthropics/skills/tree/main/skills/skill-creator" target="_blank" rel="noreferrer">Anthropic Skill Creator</a></li><li><a href="https://code.claude.com/docs/en/skills" target="_blank" rel="noreferrer">Claude Code — Skills</a></li><li><a href="https://code.claude.com/docs/en/routines" target="_blank" rel="noreferrer">Claude Code — Routines</a></li><li><a href="https://code.claude.com/docs/en/desktop-scheduled-tasks" target="_blank" rel="noreferrer">Claude Code — Desktop scheduled tasks</a></li><li><a href="https://code.claude.com/docs/en/scheduled-tasks" target="_blank" rel="noreferrer">Claude Code — /loop and scheduled prompts</a></li></ul><h3>文字表達參考</h3><ul class="sources"><li><a href="https://github.com/danyuchn/iso-24495-skill" target="_blank" rel="noreferrer">ISO 24495 plain-language skill（非 ISO 官方專案；本教材文字優化參考）</a></li></ul><p class="foot">內容校對：2026-08-24。本教材為課程整理，不代表 Anthropic 或 ISO 官方課程內容。</p></section>
+  </div></main>
 </div>
 <script>
 const bar=document.getElementById('progress');
@@ -332,56 +193,35 @@ const toggle=document.getElementById('navToggle');
 const currentLabel=document.getElementById('mobileCurrent');
 const links=[...document.querySelectorAll('#nav a')];
 const sections=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+function closeMobileNav(){rail.classList.remove('mobile-open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','開啟課程目錄')}
+function setActiveLink(activeLink){links.forEach(a=>{const active=a===activeLink;a.classList.toggle('active',active);if(active)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')});if(activeLink)currentLabel.textContent=activeLink.textContent}
+toggle.addEventListener('click',()=>{const open=rail.classList.toggle('mobile-open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'關閉課程目錄':'開啟課程目錄')});
+links.forEach(a=>a.addEventListener('click',()=>{if(matchMedia('(max-width:980px)').matches)closeMobileNav()}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&rail.classList.contains('mobile-open')){closeMobileNav();toggle.focus()}});
+document.addEventListener('click',e=>{if(matchMedia('(max-width:980px)').matches&&rail.classList.contains('mobile-open')&&!rail.contains(e.target))closeMobileNav()});
+function update(){const d=document.documentElement,max=d.scrollHeight-d.clientHeight;bar.style.width=max?`${d.scrollTop/max*100}%`:'0%';let current=sections[0];for(const s of sections){if(s.getBoundingClientRect().top<=120)current=s}const active=links.find(a=>current&&a.getAttribute('href')===`#${current.id}`)||links[0];setActiveLink(active)}
+document.addEventListener('scroll',update,{passive:true});window.addEventListener('resize',()=>{if(innerWidth>980)closeMobileNav()},{passive:true});update();
 
-function closeMobileNav(){
-  rail.classList.remove('mobile-open');
-  toggle.setAttribute('aria-expanded','false');
-  toggle.setAttribute('aria-label','開啟課程目錄');
-}
-
-function setActiveLink(activeLink){
-  links.forEach(a=>{
-    const isActive=a===activeLink;
-    a.classList.toggle('active',isActive);
-    if(isActive) a.setAttribute('aria-current','location');
-    else a.removeAttribute('aria-current');
-  });
-  if(activeLink) currentLabel.textContent=activeLink.textContent;
-}
-
-toggle.addEventListener('click',()=>{
-  const open=rail.classList.toggle('mobile-open');
-  toggle.setAttribute('aria-expanded',String(open));
-  toggle.setAttribute('aria-label',open?'關閉課程目錄':'開啟課程目錄');
+// Progressive disclosure: open / close all within each explorer.
+document.querySelectorAll('[data-explorer]').forEach(explorer=>{
+  const items=[...explorer.querySelectorAll('details')];
+  explorer.querySelector('[data-open-all]')?.addEventListener('click',()=>items.forEach(item=>item.open=true));
+  explorer.querySelector('[data-close-all]')?.addEventListener('click',()=>items.forEach(item=>item.open=false));
 });
 
-links.forEach(a=>a.addEventListener('click',()=>{
-  if(window.matchMedia('(max-width: 980px)').matches) closeMobileNav();
-}));
-
-document.addEventListener('keydown',e=>{
-  if(e.key==='Escape'&&rail.classList.contains('mobile-open')){
-    closeMobileNav();
-    toggle.focus();
-  }
+// Swipe deck with keyboard/button support and live position counter.
+document.querySelectorAll('[data-deck]').forEach(deck=>{
+  const track=deck.querySelector('[data-track]');
+  const cards=[...track.querySelectorAll('.deck-card')];
+  const current=deck.querySelector('[data-current]');
+  const go=i=>cards[Math.max(0,Math.min(cards.length-1,i))].scrollIntoView({behavior:'smooth',block:'nearest',inline:'start'});
+  const activeIndex=()=>{const left=track.scrollLeft;let best=0,dist=Infinity;cards.forEach((card,i)=>{const d=Math.abs(card.offsetLeft-track.offsetLeft-left);if(d<dist){dist=d;best=i}});return best};
+  let raf;
+  track.addEventListener('scroll',()=>{cancelAnimationFrame(raf);raf=requestAnimationFrame(()=>current.textContent=String(activeIndex()+1))},{passive:true});
+  deck.querySelector('[data-prev]')?.addEventListener('click',()=>go(activeIndex()-1));
+  deck.querySelector('[data-next]')?.addEventListener('click',()=>go(activeIndex()+1));
+  track.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();go(activeIndex()+1)}if(e.key==='ArrowLeft'){e.preventDefault();go(activeIndex()-1)}});
 });
-
-document.addEventListener('click',e=>{
-  if(window.matchMedia('(max-width: 980px)').matches&&rail.classList.contains('mobile-open')&&!rail.contains(e.target)) closeMobileNav();
-});
-
-function update(){
-  const d=document.documentElement,max=d.scrollHeight-d.clientHeight;
-  bar.style.width=max?`${d.scrollTop/max*100}%`:'0%';
-  let current=sections[0];
-  for(const s of sections){if(s.getBoundingClientRect().top<=120)current=s;}
-  const active=links.find(a=>current&&a.getAttribute('href')===`#${current.id}`) || links[0];
-  setActiveLink(active);
-}
-
-document.addEventListener('scroll',update,{passive:true});
-window.addEventListener('resize',()=>{if(window.innerWidth>980)closeMobileNav();},{passive:true});
-update();
 </script>
 </body>
 </html>
