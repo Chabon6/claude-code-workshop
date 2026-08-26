@@ -248,42 +248,56 @@ My recurring task is: [describe your real task]</pre></div>
     </section>
 
     <section id="case-c">
-      <div class="case-head"><div><div class="kicker">案例 C · 自動化</div><h2 class="section-title">每日盤前熱股掃描與推播</h2></div><span class="case-badge">曾真實生產運行</span></div>
-      <p class="section-lead">每天盤前自動掃描台美股熱門標的，整合多個情報來源，再讓一個專職 AI 子代理判斷題材處於「剛升溫／高潮／退燒」，最後自行組成訊息、品質檢查並發送。它的價值不是「會選股票」，而是示範一個 Skill 怎麼進入無人值守工作流。</p>
-      <div class="panel glass"><div class="kicker">Why automate this?</div><h3>內容每天不同，但流程每天一樣，而且必須在盤前完成</h3><p>高頻率 + 時間敏感 + 流程固定，正是「連觸發本身都值得交出去」的典型組合。</p></div>
+      <div class="case-head"><div><div class="kicker">案例 C · 自動化 · 真實系統</div><h2 class="section-title">每天 08:20，自動把盤前重點送到團隊</h2></div><span class="case-badge">已完成端到端驗證</span></div>
+      <p class="section-lead">這個案例不是要教投資，而是看一件<strong>每天都要準時完成</strong>的工作，怎麼從「人每天早上記得做」變成「系統自己開始、自己判斷能不能交付、失敗自己重試」。真實流程會先掃描台股與美股，各選出 10 檔，再查最多 20 檔的新聞催化，最後只發一則短訊到 Discord。</p>
+
+      <div class="panel glass"><div class="kicker">Why automate this?</div><h3>早上 08:20 要開始；但不值得每天安排一個人只負責「按開始」</h3><p>盤前資訊每天不同，但工作順序固定，而且晚了價值就下降。這正是適合自動化的工作：把「何時開始」交給排程，把「怎麼做、什麼算完成」留在 Skill。</p></div>
 
       <div class="deck-shell" data-deck>
-        <div class="deck-head"><div><div class="kicker">Inside the real Skill · 執行層</div><h3>原始文件是一份完整 8 步驟協定；教材只展示 handoff 明確支持的 7 個核心環節</h3><p>這裡刻意不自行猜測或補造未在 handoff 展開的第 8 個步驟。</p></div><div class="deck-controls"><button class="deck-btn" type="button" data-prev aria-label="上一步">‹</button><span class="deck-count"><b data-current>1</b> / 7</span><button class="deck-btn" type="button" data-next aria-label="下一步">›</button></div></div>
-        <div class="skill-deck" data-track tabindex="0" aria-label="盤前情報自動化核心流程">
-          <article class="deck-card"><div class="deck-step"><span>01</span><span>SCREEN</span></div><h4>量化篩選</h4><p>先用量化條件縮小候選範圍，讓後面的情報工作集中在值得看的標的。</p></article>
-          <article class="deck-card"><div class="deck-step"><span>02</span><span>FEEDBACK</span></div><h4>命中率回填／週報</h4><p>把過去執行結果回填，保留週期性回顧；系統不是每天重新失憶。</p></article>
-          <article class="deck-card"><div class="deck-step"><span>03</span><span>SOURCES</span></div><h4>七個情報來源獨立抓取</h4><p>來源彼此隔離，一個來源掛掉不會拖垮整條流程。</p></article>
-          <article class="deck-card"><div class="deck-step"><span>04</span><span>VALIDATE</span></div><h4>訊號萃取與驗證</h4><p>不合格資料直接拒收，不為了「看起來完整」而硬塞進結果。</p></article>
-          <article class="deck-card"><div class="deck-step"><span>05</span><span>JUDGE</span></div><h4>專職子代理做題材裁決</h4><p>一個純推理、不使用工具的子代理，把題材分成「剛升溫／高潮／退燒」；失敗時有兩階段退階方案。</p></article>
-          <article class="deck-card"><div class="deck-step"><span>06</span><span>COMPOSE</span></div><h4>組訊息 + 發送前品質檢查</h4><p>輸出有固定格式契約，而且在真正送出前再做一次品質檢查。</p></article>
-          <article class="deck-card"><div class="deck-step"><span>07</span><span>DELIVER</span></div><h4>發送並寫入成功標記</h4><p>只有真正發送成功，才允許留下「成功」狀態。</p></article>
+        <div class="deck-head"><div><div class="kicker">一個正常早晨會發生什麼？</div><h3>把技術細節拿掉後，核心其實只有 5 個動作</h3><p>每一步都有明確的完成條件，不是「有跑就算成功」。</p></div><div class="deck-controls"><button class="deck-btn" type="button" data-prev aria-label="上一步">‹</button><span class="deck-count"><b data-current>1</b> / 5</span><button class="deck-btn" type="button" data-next aria-label="下一步">›</button></div></div>
+        <div class="skill-deck" data-track tabindex="0" aria-label="每日盤前熱股掃描流程">
+          <article class="deck-card"><div class="deck-step"><span>01</span><span>08:20</span></div><h4>先確認今天做過沒有</h4><p>如果今天已經成功送達，就不再重複執行。若電腦晚一點才醒來，只要今天還沒完成，就會補跑。</p></article>
+          <article class="deck-card"><div class="deck-step"><span>02</span><span>SHORTLIST</span></div><h4>台股、美股各縮到 10 檔</h4><p>台股看成交活躍度、價格動能與籌碼；美股看成交量與漲跌幅。先縮小範圍，再把時間花在真正值得看的標的。</p></article>
+          <article class="deck-card"><div class="deck-step"><span>03</span><span>NEWS</span></div><h4>替最多 20 檔補上新聞催化</h4><p>Claude 再搜尋近期新聞，補充「今天為什麼值得注意」。外部內容只當資料，不把網路上的文字當成系統指令。</p></article>
+          <article class="deck-card"><div class="deck-step"><span>04</span><span>MESSAGE</span></div><h4>濃縮成一則短訊</h4><p>訊息上限 1,900 字。內容太長時先縮到每個市場前 8 檔，再刪減註記；不是拆成一串訊息轟炸團隊。</p></article>
+          <article class="deck-card"><div class="deck-step"><span>05</span><span>DELIVER</span></div><h4>真的送達，才記「今天完成」</h4><p>只有 Discord 接收成功後，系統才留下今日成功標記。送失敗就不能假裝完成，因為這個標記會決定今天還要不要重跑。</p></article>
         </div>
-        <div class="deck-hint">實際 webhook、API 金鑰、股票代碼、投資判斷與真實訊息內容不在教材展示。</div>
+        <div class="deck-hint">教材不展示 webhook、API 金鑰、實際股票名單與真實推播內容；這些不是理解自動化設計所必需的資訊。</div>
+      </div>
+
+      <div class="panel flat">
+        <div class="kicker">例外不是「全部失敗」</div>
+        <h3>真正可用的自動化，要先寫清楚：什麼情況照樣交、什麼情況一定要重試</h3>
+        <table>
+          <thead><tr><th>早上發生的事</th><th>系統怎麼做</th><th>團隊會看到什麼</th></tr></thead>
+          <tbody>
+            <tr><td><strong>台股資料暫時抓不到</strong></td><td>美股照常繼續，不讓一邊的問題拖垮整份結果。</td><td>仍可收到可用內容，但會標示哪一邊資料不完整。</td></tr>
+            <tr><td><strong>週末或市場休假，沒有新資料</strong></td><td>不硬湊一則「今日熱股」，只記錄今天已正常檢查完成。</td><td>沒有訊息反而是健康狀態，不代表系統壞了。</td></tr>
+            <tr><td><strong>訊息第一次送不出去</strong></td><td>不寫成功標記；15 分鐘後再試，仍失敗則 60 分鐘後再試。</td><td>短暫的外部服務異常不需要人立刻介入。</td></tr>
+            <tr><td><strong>連續 3 次都失敗</strong></td><td>停止無限重試，改送一次失敗通知，讓人知道要接手。</td><td>自動化有明確的「交回給人」時機。</td></tr>
+          </tbody>
+        </table>
       </div>
 
       <div class="explore-shell" data-explorer>
-        <div class="explore-head"><div><div class="kicker">Inside the real Skill · 支援層</div><h3>另外三份文件，保存「為什麼、壞過什麼、平常怎麼顧」</h3></div><div class="explore-actions"><button class="explore-btn" type="button" data-open-all>全部展開</button><button class="explore-btn" type="button" data-close-all>全部收起</button></div></div>
+        <div class="explore-head"><div><div class="kicker">為什麼需要三份 Skill 文件？</div><h3>一份講「正常怎麼跑」，另外兩份把失敗經驗與日常維護留下來</h3><p>自動化不是只需要一份流程文件。系統活得越久，越需要把「為什麼這樣設計、以前怎麼壞、今天沒收到要先查什麼」分開保存。</p></div><div class="explore-actions"><button class="explore-btn" type="button" data-open-all>全部展開</button><button class="explore-btn" type="button" data-close-all>全部收起</button></div></div>
         <div class="explore-grid three file-explorer">
-          <details class="explore-item"><summary><span class="file-icon">WHY</span><span class="explore-summary"><strong>設計意圖</strong><small>為什麼當初要這樣設計</small></span><span class="explore-chevron">＋</span></summary><div class="explore-body"><p>避免未來只看到「現在怎麼做」，卻把當初的重要取捨刪掉。</p></div></details>
-          <details class="explore-item"><summary><span class="file-icon">BUG</span><span class="explore-summary"><strong>故障目錄</strong><small>以前怎麼壞、最後怎麼修</small></span><span class="explore-chevron">＋</span></summary><div class="explore-body"><p>真實失敗模式與修法被留下來，讓系統不必每隔幾個月重新踩同一個坑。</p></div></details>
-          <details class="explore-item"><summary><span class="file-icon">OPS</span><span class="explore-summary"><strong>日常運維</strong><small>做完自動化之後，平常怎麼維護</small></span><span class="explore-chevron">＋</span></summary><div class="explore-body"><p>自動化不是「設定一次就永遠存在」，它同樣需要健康檢查與維護。</p></div></details>
+          <details class="explore-item"><summary><span class="file-icon">WHY</span><span class="explore-summary"><strong>Architecture Contract</strong><small>正常流程與「不能被改壞」的規則</small></span><span class="explore-chevron">＋</span></summary><div class="explore-body"><p>例如：只有真正送達才算成功；台股或美股單邊失敗時，另一邊仍可交付；秘密金鑰不能出現在程式碼或日誌。這份文件保存的是系統的設計底線。</p></div></details>
+          <details class="explore-item"><summary><span class="file-icon">PAST</span><span class="explore-summary"><strong>Failure Archaeology</strong><small>以前真的踩過哪些坑</small></span><span class="explore-chevron">＋</span></summary><div class="explore-body"><p>它記錄真實事故與修法，例如：互動模式可用的捷徑，在無人值守模式其實看不到。下次遇到相似症狀，先比對舊事故，不要急著重做整套系統。</p></div></details>
+          <details class="explore-item"><summary><span class="file-icon">OPS</span><span class="explore-summary"><strong>Ops Runbook</strong><small>今天沒收到訊息，先查哪裡</small></span><span class="explore-chevron">＋</span></summary><div class="explore-body"><p>固定從「今天有沒有成功標記」開始，再看排程程序是否存活、日誌寫了什麼、重試到第幾次。讓維運像 checklist，而不是每次靠資深同仁臨場猜。</p></div></details>
         </div>
       </div>
 
-      <div class="panel flat"><div class="kicker">Failure story</div><h3>這個案例最值得教的，不是成功，而是第一次無人值守時「安靜地什麼都沒做」</h3><div class="timeline"><div class="timeline-item"><h4>第一次自動跑：秒結束、沒報錯、沒產出</h4><p>表面上看起來像什麼都沒發生，因此不能用傳統「找錯誤訊息」的方法定位。</p></div><div class="timeline-item"><h4>不要猜，做一比一探測</h4><p>同樣幾種呼叫方式，分別在互動模式與無人值守模式實測。</p></div><div class="timeline-item"><h4>找到根因</h4><p>某種互動模式可用的捷徑，在無人值守環境被靜默解析成空任務；模型其實收到的是「什麼都沒有」。</p></div><div class="timeline-item"><h4>修好後，加測試防止復發</h4><p>改成明確、直接的呼叫方式，再用自動化測試把這個修法釘死。</p></div></div></div>
-      <div class="grid-2"><div class="card"><div class="icon">D</div><h3>多層降級</h3><p>某個來源或子代理失敗時，流程不是只能「全成或全敗」；可以降級，但要誠實標示資訊不完整。</p></div><div class="card"><div class="icon">N</div><h3>明確禁止事項</h3><p>發送失敗不能寫成功標記；外部抓回來的文字也不能被當成系統指令執行。</p></div></div>
-      <div class="compare"><div class="side after"><span class="tag">歷史事實</span><h3>曾經真實每天自動執行</h3><p>有生產環境運行紀錄與狀態時間戳，也有 30+ 筆迭代提交記錄。</p></div><div class="side before"><span class="tag">目前狀態</span><h3>已建置、已驗證、目前暫停</h3><p>排程常駐程序目前沒有運行。這不是「沒做完」，而是自動化系統也需要運維的真實狀態。</p></div></div>
-      <div class="lesson"><div class="kicker">Lesson C</div><h3>自動化拿掉的是「誰來按開始」，不是判斷力</h3><p>訊號驗證、題材裁決、降級、品質門檻都還在；只是不用人每天早上記得叫它開始。</p></div>
+      <div class="panel flat"><div class="kicker">Failure story · 真實事故</div><h3>第一個無人值守版本，12 秒就結束：沒有錯誤訊息，也沒有任何產出</h3><div class="timeline"><div class="timeline-item"><h4>1. 表面看起來「有啟動」</h4><p>排程確實叫起了 Claude，但 12 秒後就結束，沒有推播，也沒有今日成功標記。</p></div><div class="timeline-item"><h4>2. 成功標記讓問題無法被假裝成成功</h4><p>因為「有執行」和「有送達」是兩件事。沒有成功標記，就代表今天這次工作還沒完成。</p></div><div class="timeline-item"><h4>3. 根因不是資料，也不是選股邏輯</h4><p>真正原因是：互動畫面裡可以使用的 plugin 捷徑，在無人值守模式（沒有人在畫面前操作）不會載入。Claude 實際收到的是一個空任務，所以很快就結束。</p></div><div class="timeline-item"><h4>4. 修法是把任務說得更直接</h4><p>排程不再依賴互動捷徑，而是明確指定要讀哪一份 Skill、照哪幾步執行；並加上自動測試，避免未來又改回會失效的寫法。</p></div></div></div>
+
+      <div class="compare"><div class="side before"><span class="tag">脆弱的自動化</span><h3>排程有啟動，就以為工作完成</h3><p>遇到假日、部分資料失敗、外部服務短暫故障時，很難分辨「正常安靜」和「真的壞掉」。</p></div><div class="side after"><span class="tag">可維運的自動化</span><h3>每種狀態都有下一步</h3><p>正常就送達並留標記；沒新資料就安靜完成；部分資料壞掉就降級；送不出去就重試；連續失敗就交回給人。</p></div></div>
+
+      <div class="lesson"><div class="kicker">Lesson C</div><h3>自動化不是把人拿掉；是先把「什麼算完成、失敗怎麼辦」講清楚</h3><p>當 Skill 已經寫清楚正常流程、降級方式、重試規則與成功標準，排程才有資格拿掉「每天誰來按開始」這件事。這也是業務流程自動化最值得複製的設計思路。</p></div>
     </section>
 
     <section id="wrap-up"><div class="kicker">收尾</div><h2 class="section-title">Skill 存的是你的方法；判斷力密度決定它值不值錢；自動化決定它需不需要你在場</h2><ul class="check"><li>這件事之後還會再發生嗎？</li><li>我是不是一直在重講同樣的規格？</li><li>裡面有沒有「我知道，但新人未必知道」的判斷？</li><li>我能不能說清楚什麼情況不能交付？</li><li>如果它同時高頻率、時間敏感、流程固定，是否值得把觸發也自動化？</li></ul><div class="footer-quote"><strong>不要從「我要做一個 Skill」開始。<br>從「我有哪個工作方法值得保存」開始。</strong><p>Work → Skill → Judgment → Automation</p></div></section>
 
-    <section id="sources"><div class="kicker">參考資料</div><h2 class="section-title">課後繼續看官方資料</h2><p class="section-lead">Claude Code 功能會持續更新。排程、自動化、權限等功能在正式使用前，請再以最新官方文件為準。</p><h3>官方資料</h3><ul class="sources"><li><a href="https://github.com/anthropics/skills" target="_blank" rel="noreferrer">Anthropic Skills repository</a></li><li><a href="https://github.com/anthropics/skills/tree/main/skills/skill-creator" target="_blank" rel="noreferrer">Anthropic Skill Creator</a></li><li><a href="https://code.claude.com/docs/en/skills" target="_blank" rel="noreferrer">Claude Code — Skills</a></li><li><a href="https://code.claude.com/docs/en/routines" target="_blank" rel="noreferrer">Claude Code — Routines</a></li><li><a href="https://code.claude.com/docs/en/desktop-scheduled-tasks" target="_blank" rel="noreferrer">Claude Code — Desktop scheduled tasks</a></li><li><a href="https://code.claude.com/docs/en/scheduled-tasks" target="_blank" rel="noreferrer">Claude Code — /loop and scheduled prompts</a></li></ul><p class="foot">Case A 為虛構教學示例；Case B 依真實 report-quality Skill 重整；Case C 依 case-study-handoff.md 重整。敏感資訊不公開。內容校對：2026-08-26。</p></section>
+    <section id="sources"><div class="kicker">參考資料</div><h2 class="section-title">課後繼續看官方資料</h2><p class="section-lead">Claude Code 功能會持續更新。排程、自動化、權限等功能在正式使用前，請再以最新官方文件為準。</p><h3>官方資料</h3><ul class="sources"><li><a href="https://github.com/anthropics/skills" target="_blank" rel="noreferrer">Anthropic Skills repository</a></li><li><a href="https://github.com/anthropics/skills/tree/main/skills/skill-creator" target="_blank" rel="noreferrer">Anthropic Skill Creator</a></li><li><a href="https://code.claude.com/docs/en/skills" target="_blank" rel="noreferrer">Claude Code — Skills</a></li><li><a href="https://code.claude.com/docs/en/routines" target="_blank" rel="noreferrer">Claude Code — Routines</a></li><li><a href="https://code.claude.com/docs/en/desktop-scheduled-tasks" target="_blank" rel="noreferrer">Claude Code — Desktop scheduled tasks</a></li><li><a href="https://code.claude.com/docs/en/scheduled-tasks" target="_blank" rel="noreferrer">Claude Code — /loop and scheduled prompts</a></li></ul><p class="foot">Case A 為虛構教學示例；Case B 依真實 report-quality Skill 重整；Case C 依 daily-hotlist 的 Architecture Contract、Failure Archaeology 與 Ops Runbook 重整。敏感資訊不公開。內容校對：2026-08-26。</p></section>
   </div></main>
 </div>
 <script>
