@@ -41,7 +41,7 @@
       <table class="agenda"><thead><tr><th>時間</th><th>內容</th><th>學完你會</th></tr></thead><tbody>
         <tr><td>0–12</td><td>Skill 基礎</td><td>判斷哪些工作值得變成 Skill</td></tr>
         <tr><td>12–20</td><td>案例 A · 簡單</td><td>把模糊要求改成可驗收的固定規格</td></tr>
-        <tr><td>20–30</td><td>專業判斷</td><td>找出自己工作裡沒寫下來的判準</td></tr>
+        <tr><td>20–30</td><td>專業判斷</td><td>找出自己工作裡沒寫下來的判斷標準</td></tr>
         <tr><td>30–42</td><td>案例 B · 判斷密集</td><td>看懂如何保存品質方法論與專案記憶</td></tr>
         <tr><td>42–65</td><td>動手做</td><td>用官方 Skill Creator 把自己的工作轉成 Skill</td></tr>
         <tr><td>65–73</td><td>測試與改進</td><td>用真實情境找出 Skill 缺了哪一層</td></tr>
@@ -49,13 +49,13 @@
         <tr><td>80–89</td><td>案例 C · 自動化</td><td>理解無人值守執行的價值、降級與風險</td></tr>
         <tr><td>89–90</td><td>收尾</td><td>選出下一個值得做成 Skill 的工作</td></tr>
       </tbody></table>
-      <div class="callout blue"><strong>這堂課不教手寫 YAML</strong><p>語法交給官方 Skill Creator。人的價值在於把工作流、判斷標準、例外與品質門檻講清楚。</p></div>
+      <div class="callout blue"><strong>這堂課不教手寫 Skill</strong><p>語法與結構交給官方 Skill Creator。人的價值在於把工作流、判斷標準、例外與品質門檻講清楚。</p></div>
     </section>
 
     <section id="basics">
       <div class="kicker">01 · Skill 基礎</div><h2 class="section-title">Skill 是一份 Claude 可以反覆調用的「工作操作手冊」</h2>
       <p class="section-lead">當一件工作反覆出現，而你每次都在重新提醒 Claude 相同的範圍、順序、判斷或輸出標準，就有機會把這些內容存成 Skill。</p>
-      <div class="compare"><div class="side before"><span class="tag">Before</span><h3>規格活在你腦中</h3><p>每次重新下 prompt；今天少講一條、明天忘記一個例外，輸出就會飄。</p></div><div class="side after"><span class="tag">After</span><h3>規格變成可重複資產</h3><p>Claude 在相關任務中載入同一套工作方法，人的注意力可以留給新問題，而不是重複交代舊規則。</p></div></div>
+      <div class="compare"><div class="side before"><span class="tag">Before</span><h3>規格活在你腦中</h3><p>每次重新下 prompt。今天少講一條、明天忘記一個例外，輸出就會飄。</p></div><div class="side after"><span class="tag">After</span><h3>規格變成可重複資產</h3><p>Claude 在相關任務中載入同一套工作方法，人的注意力可以留給新問題，而不是重複交代舊規則。</p></div></div>
       <div class="panel glass"><div class="kicker">What lives inside a Skill?</div><h3>不一定只有一個 prompt</h3><pre>my-skill/
 ├── SKILL.md          # 必要：用途 + 工作方法
 ├── references/       # 選用：規範、基準、專案記憶
@@ -68,17 +68,17 @@
       <div class="case-head"><div><div class="kicker">案例 A · 簡單 · 教學示例</div><h2 class="section-title">會議筆記 → 可直接寄出的會後摘要</h2></div><span class="case-badge">虛構教學案例</span></div>
       <p class="section-lead">這個案例刻意很簡單：輸入是一段凌亂會議筆記，輸出要變成可以直接寄給團隊的會後摘要。真正要教的不是「摘要能力」，而是怎麼把一句模糊的「幫我整理一下」拆成可重複、可驗收的規格。</p>
 
-      <div class="compare"><div class="side before"><span class="tag">Before · 每次重講</span><p>「幫我整理會議紀錄。要有決議、待辦、未解問題、下次會議；不要自己猜負責人或期限；提案不能當成已決定。」</p></div><div class="side after"><span class="tag">After · 存成 Skill</span><p>之後只要丟會議筆記。Skill 固定做分類、套格式、處理缺漏，並用同一套規則自我檢查。</p></div></div>
+      <div class="compare"><div class="side before"><span class="tag">Before · 每次重講</span><p>「幫我整理會議紀錄。要有決議、待辦、未解問題、下次會議；不要自己猜負責人或期限；提案不能當成已決定。」</p></div><div class="side after"><span class="tag">After · 存成 Skill</span><p>之後只要丟會議逐字稿給 Agent，Agent 便會依照 Skill 去做分類、套格式、處理缺漏，並用預設規則自我檢查。</p></div></div>
 
       <div class="panel glass">
         <div class="kicker">Mini-spec · 這個 Skill 到底規定什麼？</div>
-        <h3>先把「幫我整理」改寫成 5 條可以判定 Pass / Fail 的規則</h3>
+        <h3>把「幫我整理」這種模糊任務敘述改寫成 5 條可以判定 Pass / Fail 的具體規則</h3>
         <div class="grid-2">
-          <div class="card"><div class="icon">1</div><h3>輸出固定四區</h3><p>永遠依序輸出：<strong>已確認決議 → 待辦事項 → 未解問題 → 下次追蹤</strong>。沒有內容也保留區塊並標示「無」。</p></div>
+          <div class="card"><div class="icon">1</div><h3>輸出固定四類</h3><p>永遠依序輸出以下四類：<strong>已確認決議、待辦事項、未解問題、下次追蹤</strong>。沒有內容也保留區塊並標示「無」。</p></div>
           <div class="card"><div class="icon">2</div><h3>提案 ≠ 決議</h3><p>只有筆記明確表示「決定、確認、同意採用」的內容才能進決議；「可以研究、建議、考慮」一律不能升格。</p></div>
-          <div class="card"><div class="icon">3</div><h3>待辦要有三個欄位</h3><p>每個待辦固定寫：事項、負責人、期限。原文沒寫負責人或期限，就填「未指定」，不能自行補人名或日期。</p></div>
-          <div class="card"><div class="icon">4</div><h3>資訊只出現一次</h3><p>同一件事不能同時被放進「決議」和「未解問題」。分類必須互斥，避免摘要看起來自己打架。</p></div>
-          <div class="card"><div class="icon">5</div><h3>缺漏要被看見</h3><p>不知道的資訊要顯式標示，而不是省略。摘要的品質標準之一，就是讓收件人看得出「還缺什麼」。</p></div>
+          <div class="card"><div class="icon">3</div><h3>待辦事項需有三個欄位</h3><p>每個待辦事項固定具備的輸出項目：事項、負責人、期限。若原文未明確表示負責人或期限，就填「未指定」，不能自行填補人名或日期。</p></div>
+          <div class="card"><div class="icon">4</div><h3>分類必須互斥</h3><p>同一件事項不能同時被歸類為「決議」和「未解問題」。各分類必須互斥，避免摘要看起來自己打架。</p></div>
+          <div class="card"><div class="icon">5</div><h3>缺漏要被看見</h3><p>不知道的資訊要顯式標示，而不是省略。會議摘要的品質標準之一，就是讓人看得出「還缺什麼」。</p></div>
         </div>
       </div>
 
@@ -106,14 +106,15 @@
       </div>
 
       <div class="panel flat">
-        <div class="kicker">Acceptance test · 現場直接驗收</div>
-        <h3>不用問「你覺得輸出好不好」；直接看 5 個指標</h3>
+        <div class="kicker">Acceptance test · 驗收</div>
+        <h3>不要問「你覺得輸出好不好」、不要說「幫我檢查一下」，而是透過 Skill 的指引，讓 Agent 直接自我驗證 5 個指標</h3>
+        <p class="section-lead">透過具體的指標來評估輸出品質，而不是主觀判斷。</p>
         <ul class="check">
-          <li><strong>格式完整率：</strong>4 個固定區塊是否全部存在？目標 4 / 4。</li>
-          <li><strong>決議誤判：</strong>「研究邀請制」是否被錯放成已確認決議？目標 0 次。</li>
-          <li><strong>資訊幻覺：</strong>是否自行補了不存在的負責人、期限或日期？目標 0 次。</li>
-          <li><strong>待辦欄位完整率：</strong>每個待辦是否都有事項／負責人／期限三欄？目標 100%。</li>
-          <li><strong>分類衝突：</strong>同一資訊是否重複出現在互相矛盾的區塊？目標 0 次。</li>
+          <li><strong>格式完整率：</strong>4 個固定類別區塊是否全部存在？ → 合規目標 4 / 4、驗證規則一：輸出固定四類。</li>
+          <li><strong>分類誤判：</strong>「研究邀請制」是否被錯放成已確認決議？ → 合規目標 0 次、驗證規則二：提案 ≠ 決議。</li>
+          <li><strong>分類衝突：</strong>同一資訊是否重複出現在互相矛盾的分類區塊？ → 合規目標 0 次、驗證規則四：分類必須互斥。</li>
+          <li><strong>資訊幻覺：</strong>缺漏有無明示？是否自行補了不存在的負責人、期限或日期？ → 合規目標 0 次、驗證規則五：缺漏要被看見。</li>
+          <li><strong>待辦事項之欄位完整率：</strong>每個待辦事項是否都有事項／負責人／期限三欄？ → 合規目標 100%、驗證規則三：待辦事項需有三個欄位。</li>
         </ul>
       </div>
 
@@ -124,7 +125,7 @@
 
     <section id="judgment">
       <div class="kicker">02 · 專業判斷</div><h2 class="section-title">真正難複製的，是你「怎麼判斷」</h2>
-      <p class="section-lead">Case A 的規則很容易寫清楚；但真實工作通常更難。Claude 可能照流程走完，卻還是做出你不會交付的結果。下一層要保存的是：順序、取捨、例外、停止條件，以及失敗時怎麼表態。</p>
+      <p class="section-lead">Case A 的規則很容易寫清楚，但真實工作通常更難。Claude 可能照流程走完，卻還是做出你不會交付的結果。下一層要保存的是：順序、取捨、例外、停止條件，以及失敗時怎麼表態。</p>
       <div class="grid-2"><div class="card"><div class="icon">1</div><h3>順序</h3><p>哪些問題沒先處理，後面的數字根本不值得看？</p></div><div class="card"><div class="icon">2</div><h3>取捨</h3><p>分數、速度、完整度與準確性衝突時，你把什麼排第一？</p></div><div class="card"><div class="icon">3</div><h3>不確定性</h3><p>查不到、來源衝突、證據不完整時，是猜一個答案，還是明確標示限制？</p></div><div class="card"><div class="icon">4</div><h3>停止</h3><p>做到什麼程度，就應該停止繼續優化？</p></div></div>
       <div class="callout blue"><strong>課堂小練習</strong><p>想一件你會交給新人做的工作：你驗收時腦中會快速掃過哪 3 條判準，但從來沒真正寫下來？那通常就是 Skill 最值錢的素材。</p></div>
     </section>
