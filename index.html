@@ -23,7 +23,7 @@
     <nav class="nav" id="nav" aria-label="課程目錄">
       <a href="#overview">總覽</a><a href="#basics">Skill 基礎</a><a href="#case-a">案例 A</a><a href="#judgment">專業判斷</a><a href="#case-b">案例 B</a><a href="#hands">動手做</a><a href="#eval">測試</a><a href="#automation">自動化</a><a href="#case-c">案例 C</a><a href="#wrap-up">收尾</a><a href="#sources">參考資料</a>
     </nav>
-    <div class="rail-note">90 分鐘正式教材 · 2026-08-25<br>Case A 為教學示例；Case B/C 來自真實既有 Skill，敏感資訊已移除。</div>
+    <div class="rail-note">90 分鐘正式教材 · 2026-08-26<br>Case A 為教學示例；Case B/C 來自真實既有 Skill，敏感資訊已移除。</div>
   </aside>
 
   <main class="main"><div class="content">
@@ -42,7 +42,7 @@
         <tr><td>0–12</td><td>Skill 基礎</td><td>判斷哪些工作值得變成 Skill</td></tr>
         <tr><td>12–20</td><td>案例 A · 簡單</td><td>把模糊要求改成可驗收的固定規格</td></tr>
         <tr><td>20–30</td><td>專業判斷</td><td>找出自己工作裡沒寫下來的判斷標準</td></tr>
-        <tr><td>30–42</td><td>案例 B · 判斷密集</td><td>看懂如何保存品質方法論與專案記憶</td></tr>
+        <tr><td>30–42</td><td>案例 B · 判斷密集</td><td>看懂如何把真實錯誤變成可重複的品質判斷</td></tr>
         <tr><td>42–65</td><td>動手做</td><td>用官方 Skill Creator 把自己的工作轉成 Skill</td></tr>
         <tr><td>65–73</td><td>測試與改進</td><td>用真實情境找出 Skill 缺了哪一層</td></tr>
         <tr><td>73–80</td><td>自動化</td><td>分清楚「怎麼做」和「何時做」</td></tr>
@@ -165,26 +165,52 @@
     </section>
 
     <section id="case-b">
-      <div class="case-head"><div><div class="kicker">案例 B · 判斷密集</div><h2 class="section-title">報告品質系統性提升作戰手冊</h2></div><span class="case-badge">真實專案</span></div>
-      <p class="section-lead">這個專案幾乎純靠 AI 產出報告。最危險的不是程式報錯，而是品質悄悄變差：規則沒有真的被遵循、外部事實沒有真的查證，報告看起來仍然完整，但其實已經偏掉。這類事故曾經真的發生過：一份正式交付報告完全沒有跑到品質檢查。</p>
-      <div class="panel glass"><div class="kicker">The real problem</div><h3>一次修一個錯，不代表品質系統在變好</h3><p>這份 Skill 的作用不是替某一份報告挑錯，而是把「目前有哪些品質防線、真實量測基準在哪、每一輪品質提升要怎麼跑、什麼時候算收斂」收斂成一份可重複使用的專案品質記憶。</p></div>
+      <div class="case-head"><div><div class="kicker">案例 B · 判斷密集</div><h2 class="section-title">AI 報告品質改善：把每次抓到的錯，變成下一次的規則</h2></div><span class="case-badge">真實專案</span></div>
+      <p class="section-lead">這個專案會用 AI 產出深度研究報告。真正危險的不是「報告寫得不像報告」，而是<strong>文字很完整、版面也很漂亮，但裡面的日期、數字或推論其實錯了</strong>。因此我後來做的不是另一個「寫報告 Skill」，而是一份專門改善報告品質的 Skill：每次從真實報告抓到問題，就留下判斷方法，讓下一份報告直接繼承。</p>
 
-      <div class="explore-shell" data-explorer>
-        <div class="explore-head"><div><div class="kicker">Inside the real Skill</div><h3>打開這份作戰手冊，實際會看到什麼？</h3><p>以下都來自 handoff 可確認的真實結構；敏感的個股、投資內容與實際數值不展示。</p></div><div class="explore-actions"><button class="explore-btn" type="button" data-open-all>全部展開</button><button class="explore-btn" type="button" data-close-all>全部收起</button></div></div>
-        <div class="explore-grid">
-          <details class="explore-item"><summary><span class="explore-index">01</span><span class="explore-summary"><strong>先過前置閘門</strong><small>品質流程沒有真的跑到，後面分數都不可信</small></span><span class="explore-chevron">＋</span></summary><div class="explore-body"><p>先檢查品質流程是否真的被執行，以及需要查證的外部事實是否真的查過。這不是「提醒一下」，而是先決條件。</p><div class="real-rule"><b>判斷：</b>先把地基修好，再談優化；否則你只是在精確量測一個錯誤流程。</div></div></details>
-          <details class="explore-item"><summary><span class="explore-index">02</span><span class="explore-summary"><strong>盤點已經存在的品質槓桿</strong><small>先知道專案現在到底有哪些防線</small></span><span class="explore-chevron">＋</span></summary><div class="explore-body"><p>手冊會整理分散在不同文件裡的品質機制，例如初始協調規則、事實查證規則、評分規則。下一次改善時，不用重新靠記憶拼湊。</p></div></details>
-          <details class="explore-item"><summary><span class="explore-index">03</span><span class="explore-summary"><strong>保存真實量測基準</strong><small>看得出品質是不是逐輪收斂</small></span><span class="explore-chevron">＋</span></summary><div class="explore-body"><ul class="check"><li>第一輪：最多、最嚴重的錯誤。</li><li>中間幾輪：開始剩方法論類問題。</li><li>最後：只剩風格類意見，分數也不再變動。</li></ul><p>這組真實審查紀錄提供一個「什麼叫正在收斂」的參考形狀，而不是只靠感覺。</p></div></details>
-          <details class="explore-item"><summary><span class="explore-index">04</span><span class="explore-summary"><strong>定義每輪品質提升怎麼打</strong><small>不是看到哪裡錯就隨手修哪裡</small></span><span class="explore-chevron">＋</span></summary><div class="explore-body"><p>Skill 保存每跑一輪「品質提升作戰」時要完成的固定工作，使改善變成可重複的回合。handoff 沒有列出這 5 個子步驟的逐條內容，因此教材也不自行補造。</p></div></details>
-          <details class="explore-item"><summary><span class="explore-index">05</span><span class="explore-summary"><strong>用計分誘因防止偷懶</strong><small>完成一輪有小獎勵，嚴重錯誤沒修會付更大代價</small></span><span class="explore-chevron">＋</span></summary><div class="explore-body"><p>這不是要追求漂亮分數，而是把「跳過修正」變成不划算的選擇。規則本身在塑造代理的行為，而不只是事後評論結果。</p></div></details>
-          <details class="explore-item"><summary><span class="explore-index">06</span><span class="explore-summary"><strong>把價值排序寫死</strong><small>準確優先於分數好看</small></span><span class="explore-chevron">＋</span></summary><div class="explore-body"><p>手冊明確記錄：如果一個修正讓結果更準確，即使分數因此下降也要保留。這是在保存人的取捨，不只是保存流程。</p></div></details>
-          <details class="explore-item"><summary><span class="explore-index">07</span><span class="explore-summary"><strong>候選改善 ≠ 已驗證能力</strong><small>聽起來有用，不代表現在就應該加進系統</small></span><span class="explore-chevron">＋</span></summary><div class="explore-body"><p>尚未在實戰證明必要的點子明確標成 Candidate。這是在對抗過度工程，也讓 Skill 誠實區分「已驗證」與「可能有用」。</p></div></details>
-          <details class="explore-item"><summary><span class="explore-index">08</span><span class="explore-summary"><strong>連 Skill 本身也要重新驗證</strong><small>專案變了，作戰手冊也可能過時</small></span><span class="explore-chevron">＋</span></summary><div class="explore-body"><p>文件結尾保留如何重新驗證這份手冊是否過時的具體指令。Skill 不是寫完就永遠正確，它本身也需要維護。</p></div></details>
+      <div class="compare"><div class="side before"><span class="tag">只修這一份</span><h3>改掉錯字、數字，再交出去</h3><p>今天的報告可能變對了，但下次遇到類似問題，AI 還是可能重新犯一次。問題被修掉，經驗卻沒有留下。</p></div><div class="side after"><span class="tag">做成品質 Skill</span><h3>把「為什麼錯、以後怎麼抓」一起保存</h3><p>例如時間線錯誤、單位混淆、來源不足，不只修正當次報告；如果同一類錯反覆出現，就把它變成下一次固定會檢查的規則。</p></div></div>
+
+      <div class="panel glass"><div class="kicker">A real quality incident</div><h3>一份看起來很完整的報告，第一輪獨立審查就抓到重大事實錯誤</h3><p>真實案例中，第一輪 review 一次抓到 12+ 個問題，其中包含<strong>產品時程被寫錯</strong>，以及<strong>市場規模數字引用錯誤</strong>。如果只是把這兩個數字改掉，這次報告修好了；但品質 Skill 要再追問一層：「為什麼原本的流程沒抓到？這一類錯，下次要在哪個環節攔住？」</p><div class="real-rule"><b>這個案例要教的判斷：</b>修正 deliverable 只是一次性工作；把錯誤類型變成檢查規則，才是在累積可重複的專業。</div></div>
+
+      <div class="panel flat">
+        <div class="kicker">What one quality cycle actually looks like</div>
+        <h3>一份報告從「看起來完成」到「真的可以交」，我讓 Claude 固定走這 4 個判斷</h3>
+        <div class="timeline">
+          <div class="timeline-item"><h4>1. 先確認品質機制真的有跑</h4><p>曾經有一份正式報告完全繞過品質流程。這種情況下，後面的分數再漂亮都沒有意義；所以第一步不是評分，而是先確認該做的查證與審查真的執行過。</p></div>
+          <div class="timeline-item"><h4>2. 重要事實獨立重查，不沿用原本的答案</h4><p>對關鍵數字、時間線與推導重新找來源，刻意換一組搜尋方式，至少用兩個獨立來源交叉確認；算出來的數字也重新計算。只要出現 FAIL 或計算錯誤，就不能直接進入交付。</p></div>
+          <div class="timeline-item"><h4>3. 換一個「沒參與撰寫」的 reviewer 挑錯</h4><p>Reviewer 只看完成稿，不知道原本作者怎麼想，避免自己替自己的答案找理由。每輪把問題分成「真的錯、方法有缺口、只是風格意見」，只修有證據、會影響品質的問題。</p></div>
+          <div class="timeline-item"><h4>4. 判斷是不是已經收斂，而不是無限改下去</h4><p>當前幾輪還在抓重大事實錯誤，就代表不能停；當最後一輪只剩風格建議，而且沒有值得接受的修正，才代表這份報告已經接近「夠好可以交」。</p></div>
         </div>
       </div>
 
-      <div class="panel flat"><div class="kicker">What is actually being stored?</div><h3>這不是「一個很長的 prompt」，而是一套品質決策系統</h3><div class="grid-2"><div class="card"><div class="icon">A</div><h3>專案記憶</h3><p>已經做過哪些改善、有哪些品質機制、真實基準線在哪。</p></div><div class="card"><div class="icon">B</div><h3>價值判斷</h3><p>先修什麼、怎麼取捨、查不到怎麼表態、什麼時候停止。</p></div></div></div>
-      <div class="lesson"><div class="kicker">Lesson B</div><h3>Skill 可以保存「你怎麼把事情做對」的整套方法</h3><p>判斷力密度越高，Skill 越不像模板，也越像可以反覆調用的專業。</p></div>
+      <div class="panel flat">
+        <div class="kicker">Real baseline · 真實四輪審查</div>
+        <h3>「收斂」不是感覺：這份 Skill 把一次真實報告的審查紀錄留下來，當作之後的比較基準</h3>
+        <table>
+          <thead><tr><th>審查輪次</th><th>抓到的問題</th><th>實際採用修正</th><th>代表什麼</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Round 1</strong></td><td>12+ 個</td><td>約 6 個</td><td>還有重大事實錯誤，例如時間線、關鍵數字。</td></tr>
+            <tr><td><strong>Round 2</strong></td><td>6 個</td><td>4 個</td><td>重大錯誤下降，開始剩研究方法與解釋方式的缺口。</td></tr>
+            <tr><td><strong>Round 3</strong></td><td>4 個</td><td>4 個</td><td>繼續補方法論與說明，仍有值得修正的內容。</td></tr>
+            <tr><td><strong>Round 4</strong></td><td>3 個</td><td>0 個</td><td>只剩風格類意見，沒有實質修正被接受 → 可以停止。</td></tr>
+          </tbody>
+        </table>
+        <p>因此 Skill 不是死背「一定四輪」。真正的判斷是看<strong>錯誤類型有沒有從重大事實 → 方法問題 → 風格意見逐步下降</strong>。如果第三輪還在抓重大事實錯誤，反而代表前面的產出流程可能退步，不能照表收工。</p>
+      </div>
+
+      <div class="explore-shell" data-explorer>
+        <div class="explore-head"><div><div class="kicker">Inside the real Skill</div><h3>除了流程，Skill 還保存哪些「人會做、但不一定會寫下來」的判斷？</h3><p>以下直接取自這份真實品質作戰手冊的決策原則；拿掉工具名稱與版本細節，只保留工作上真正有用的判斷。</p></div><div class="explore-actions"><button class="explore-btn" type="button" data-open-all>全部展開</button><button class="explore-btn" type="button" data-close-all>全部收起</button></div></div>
+        <div class="explore-grid">
+          <details class="explore-item"><summary><span class="explore-index">01</span><span class="explore-summary"><strong>準確性 > 漂亮分數</strong><small>修正後分數變低，也可能是正確選擇</small></span><span class="explore-chevron">＋</span></summary><div class="explore-body"><p>如果一個修正讓報告更符合事實，即使評分因此下降也要保留。這是在保存「我們到底為誰優化」的價值排序，而不是讓 Claude 只追求看起來漂亮的 KPI。</p></div></details>
+          <details class="explore-item"><summary><span class="explore-index">02</span><span class="explore-summary"><strong>查不到，就誠實說查不到</strong><small>不確定性本身也要被交付</small></span><span class="explore-chevron">＋</span></summary><div class="explore-body"><p>只有單一來源、無法獨立驗證的說法，不要把語氣寫得像已經證實；要清楚標示限制。好的報告不是「每一格都有答案」，而是讀者能知道哪些資訊仍有不確定性。</p></div></details>
+          <details class="explore-item"><summary><span class="explore-index">03</span><span class="explore-summary"><strong>修一個數字，要追到所有衍生數字</strong><small>不只改出錯的那一格</small></span><span class="explore-chevron">＋</span></summary><div class="explore-body"><p>一個基礎數字改了，相關比率、結論與後文引用都要一起重算、掃描。否則很容易出現「前面改對了，後面還留著舊答案」的內部矛盾。</p></div></details>
+          <details class="explore-item"><summary><span class="explore-index">04</span><span class="explore-summary"><strong>重複錯誤要升級成新規則</strong><small>同一類問題不要靠下次再細心一點</small></span><span class="explore-chevron">＋</span></summary><div class="explore-body"><p>如果不同報告反覆出現同一類錯，例如時間線計算、單位混淆，就不是「這次作者粗心」，而是流程缺了一個檢查。Skill 要把這個發現寫回去，讓改善可以累積。</p></div></details>
+          <details class="explore-item"><summary><span class="explore-index">05</span><span class="explore-summary"><strong>有想法 ≠ 現在就要加功能</strong><small>先用真實案例證明需要，再擴充</small></span><span class="explore-chevron">＋</span></summary><div class="explore-body"><p>手冊裡也有候選改善清單，但沒有因為「聽起來更完整」就全部做掉。只有真實報告證明某個問題值得解，才把新檢查加入流程。這是在避免把 Skill 做成一份無限膨脹的規則大全。</p></div></details>
+        </div>
+      </div>
+
+      <div class="panel flat"><div class="kicker">What is actually being stored?</div><h3>這份 Skill 保存的不是投資知識，而是「品質工作怎麼做」的專案記憶</h3><div class="grid-2"><div class="card"><div class="icon">A</div><h3>判斷順序</h3><p>先確認流程真的有跑，再查事實；先修 ERROR，再談方法與風格；不能因為分數好看就放過錯誤。</p></div><div class="card"><div class="icon">B</div><h3>學習迴圈</h3><p>這次抓到什麼 → 哪些真的值得修 → 是否重複發生 → 要不要變成下一次固定檢查。下一份報告不是重新從零開始。</p></div></div></div>
+      <div class="lesson"><div class="kicker">Lesson B</div><h3>Judgment-heavy Skill 最值錢的地方，是讓團隊不用每次重新「靠高手感覺」驗收</h3><p>當你能把「哪裡最容易錯、什麼證據才算夠、什麼時候不能交、什麼時候可以停止」保存下來，Skill 才真正開始複製專業，而不只是複製格式。</p></div>
     </section>
 
     <section id="hands">
@@ -257,7 +283,7 @@ My recurring task is: [describe your real task]</pre></div>
 
     <section id="wrap-up"><div class="kicker">收尾</div><h2 class="section-title">Skill 存的是你的方法；判斷力密度決定它值不值錢；自動化決定它需不需要你在場</h2><ul class="check"><li>這件事之後還會再發生嗎？</li><li>我是不是一直在重講同樣的規格？</li><li>裡面有沒有「我知道，但新人未必知道」的判斷？</li><li>我能不能說清楚什麼情況不能交付？</li><li>如果它同時高頻率、時間敏感、流程固定，是否值得把觸發也自動化？</li></ul><div class="footer-quote"><strong>不要從「我要做一個 Skill」開始。<br>從「我有哪個工作方法值得保存」開始。</strong><p>Work → Skill → Judgment → Automation</p></div></section>
 
-    <section id="sources"><div class="kicker">參考資料</div><h2 class="section-title">課後繼續看官方資料</h2><p class="section-lead">Claude Code 功能會持續更新。排程、自動化、權限等功能在正式使用前，請再以最新官方文件為準。</p><h3>官方資料</h3><ul class="sources"><li><a href="https://github.com/anthropics/skills" target="_blank" rel="noreferrer">Anthropic Skills repository</a></li><li><a href="https://github.com/anthropics/skills/tree/main/skills/skill-creator" target="_blank" rel="noreferrer">Anthropic Skill Creator</a></li><li><a href="https://code.claude.com/docs/en/skills" target="_blank" rel="noreferrer">Claude Code — Skills</a></li><li><a href="https://code.claude.com/docs/en/routines" target="_blank" rel="noreferrer">Claude Code — Routines</a></li><li><a href="https://code.claude.com/docs/en/desktop-scheduled-tasks" target="_blank" rel="noreferrer">Claude Code — Desktop scheduled tasks</a></li><li><a href="https://code.claude.com/docs/en/scheduled-tasks" target="_blank" rel="noreferrer">Claude Code — /loop and scheduled prompts</a></li></ul><p class="foot">Case A 為虛構教學示例；Case B/C 依 case-study-handoff.md 重整，推測內容已標示，敏感資訊不公開。內容校對：2026-08-25。</p></section>
+    <section id="sources"><div class="kicker">參考資料</div><h2 class="section-title">課後繼續看官方資料</h2><p class="section-lead">Claude Code 功能會持續更新。排程、自動化、權限等功能在正式使用前，請再以最新官方文件為準。</p><h3>官方資料</h3><ul class="sources"><li><a href="https://github.com/anthropics/skills" target="_blank" rel="noreferrer">Anthropic Skills repository</a></li><li><a href="https://github.com/anthropics/skills/tree/main/skills/skill-creator" target="_blank" rel="noreferrer">Anthropic Skill Creator</a></li><li><a href="https://code.claude.com/docs/en/skills" target="_blank" rel="noreferrer">Claude Code — Skills</a></li><li><a href="https://code.claude.com/docs/en/routines" target="_blank" rel="noreferrer">Claude Code — Routines</a></li><li><a href="https://code.claude.com/docs/en/desktop-scheduled-tasks" target="_blank" rel="noreferrer">Claude Code — Desktop scheduled tasks</a></li><li><a href="https://code.claude.com/docs/en/scheduled-tasks" target="_blank" rel="noreferrer">Claude Code — /loop and scheduled prompts</a></li></ul><p class="foot">Case A 為虛構教學示例；Case B 依真實 report-quality Skill 重整；Case C 依 case-study-handoff.md 重整。敏感資訊不公開。內容校對：2026-08-26。</p></section>
   </div></main>
 </div>
 <script>
