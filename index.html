@@ -109,20 +109,54 @@
         <div class="kicker">Acceptance test · 驗收</div>
         <h3>不要問「你覺得輸出好不好」、不要說「幫我檢查一下」，而是透過 Skill 的指引，讓 Agent 直接自我驗證 5 個指標</h3>
         <p class="section-lead">透過具體的指標來評估輸出品質，而不是主觀判斷。</p>
-        <ul class="check">
-          <li><strong>格式完整率：</strong>4 個固定類別區塊是否全部存在？ → 合規目標 4 / 4、驗證規則一：輸出固定四類。</li>
-          <li><strong>分類誤判：</strong>「研究邀請制」是否被錯放成已確認決議？ → 合規目標 0 次、驗證規則二：提案 ≠ 決議。</li>
-          <li><strong>分類衝突：</strong>同一資訊是否重複出現在互相矛盾的分類區塊？ → 合規目標 0 次、驗證規則四：分類必須互斥。</li>
-          <li><strong>資訊幻覺：</strong>缺漏有無明示？是否自行補了不存在的負責人、期限或日期？ → 合規目標 0 次、驗證規則五：缺漏要被看見。</li>
-          <li><strong>待辦事項之欄位完整率：</strong>每個待辦事項是否都有事項／負責人／期限三欄？ → 合規目標 100%、驗證規則三：待辦事項需有三個欄位。</li>
-        </ul>
+        <table class="check">
+          <thead>
+            <tr>
+              <th>驗證標準</th>
+              <th>檢查內容</th>
+              <th>合規目標</th>
+              <th>驗證規則</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>格式完整率</strong></td>
+              <td>4 個固定類別區塊是否全部存在？</td>
+              <td>4 / 4</td>
+              <td>規則一：輸出固定四類。</td>
+            </tr>
+            <tr>
+              <td><strong>分類誤判</strong></td>
+              <td>「研究邀請制」是否被錯放成已確認決議？</td>
+              <td>0 次</td>
+              <td>規則二：提案 ≠ 決議。</td>
+            </tr>
+            <tr>
+              <td><strong>分類衝突</strong></td>
+              <td>同一資訊是否重複出現在互相矛盾的分類區塊？</td>
+              <td>0 次</td>
+              <td>規則四：分類必須互斥。</td>
+            </tr>
+            <tr>
+              <td><strong>資訊幻覺</strong></td>
+              <td>缺漏有無明示？是否自行補了不存在的負責人、期限或日期？</td>
+              <td>0 次</td>
+              <td>規則五：缺漏要被看見。</td>
+            </tr>
+            <tr>
+              <td><strong>待辦事項之欄位完整率</strong></td>
+              <td>每個待辦事項是否都有事項／負責人／期限三欄？</td>
+              <td>100%</td>
+              <td>規則三：待辦事項需有三個欄位。</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       <div class="callout blue"><strong>再加一個 edge case</strong><p>把「下次會議時間」從輸入刪掉，再跑一次。好的 Skill 應該輸出「下次追蹤：未指定」，而不是自己猜一個日期，也不是把整個區塊消失。這就是後面「測試與改進」章節的最小版本。</p></div>
 
       <div class="lesson"><div class="kicker">Lesson A</div><h3>第一個 Skill 的價值，不是變聰明；是把「好結果長什麼樣」講到可以驗收</h3><p>固定格式只是開始。真正讓它可重複使用的是：分類規則、禁止事項、缺漏處理與明確的 Pass / Fail 指標。</p></div>
     </section>
-
     <section id="judgment">
       <div class="kicker">02 · 專業判斷</div><h2 class="section-title">真正難複製的，是你「怎麼判斷」</h2>
       <p class="section-lead">Case A 的規則很容易寫清楚，但真實工作通常更難。Claude 可能照流程走完，卻還是做出你不會交付的結果。下一層要保存的是：順序、取捨、例外、停止條件，以及失敗時怎麼表態。</p>
